@@ -23,7 +23,7 @@
 
             <ImageView
                 android:id="@+id/thumbnail"
-                circlePictureURL="@{model.url}"
+                pictureURL="@{model.url}"
                 android:layout_width="0dp"
                 android:layout_height="150dp"
                 android:scaleType="centerCrop"

@@ -12,7 +12,7 @@ class BindingAdapter {
 
     companion object {
         @JvmStatic
-        @BindingAdapter("circlePictureURL")
+        @BindingAdapter("pictureURL")
         fun setPictureURL(imageView: ImageView, url: String?) {
             Picasso.with(imageView.context)
                     .load(url)
