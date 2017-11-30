@@ -10,6 +10,7 @@ import com.footballamericain.footballamericain.Adapter.ArticlesRecyclerViewAdapt
 import com.footballamericain.footballamericain.databinding.FragmentArticlesListBinding
 import com.footballamericain.footballamericain.dummy.DummyContent
 import com.footballamericain.footballamericain.dummy.DummyContent.Article
+import com.footballamericain.footballamericain.dummy.MatchDummyContent
 
 /**
  * A fragment representing a list of Items.
@@ -29,7 +30,7 @@ class ArticlesFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
         val binding = FragmentArticlesListBinding.inflate(inflater, container, false)
 
-        binding.recyclerView.adapter = ArticlesRecyclerViewAdapter(DummyContent.ITEMS, mListener)
+        binding.recyclerView.adapter = ArticlesRecyclerViewAdapter(DummyContent.ITEMS, MatchDummyContent.ITEMS,mListener)
 
         return binding.root
     }

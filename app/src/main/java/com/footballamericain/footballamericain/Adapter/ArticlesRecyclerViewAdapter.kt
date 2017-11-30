@@ -5,9 +5,12 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.footballamericain.footballamericain.Fragments.ArticlesFragment.OnArticlesFragmentInteractionListener
 import com.footballamericain.footballamericain.ViewHolder.Article.ArticleViewHolder
+import com.footballamericain.footballamericain.ViewHolder.HorizontalRecyclerView.HorizontalRVViewHolder
 import com.footballamericain.footballamericain.databinding.ViewHolderArticleBinding
 import com.footballamericain.footballamericain.databinding.ViewHolderHeadlineBinding
+import com.footballamericain.footballamericain.databinding.ViewHolderHorizontalRecyclerViewBinding
 import com.footballamericain.footballamericain.dummy.DummyContent.Article
+import com.footballamericain.footballamericain.dummy.MatchDummyContent.Match
 
 /**
  * [RecyclerView.Adapter] that can display a [Article] and makes a call to the
@@ -15,22 +18,26 @@ import com.footballamericain.footballamericain.dummy.DummyContent.Article
  * TODO: Replace the implementation with code for your data type.
  */
 class ArticlesRecyclerViewAdapter(private val mArticleList: List<Article>,
+                                  private val mMatchList: List<Match>,
                                   private val mListener: OnArticlesFragmentInteractionListener?)
-    : RecyclerView.Adapter<ArticleViewHolder>() {
+    : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    private enum class TYPE{
-        HEADLINE, ARTICLE
+    private enum class TYPE {
+        MATCH, HEADLINE, ARTICLE
     }
 
     private var mLayoutInflater: LayoutInflater? = null
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArticleViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         if (mLayoutInflater == null) {
             mLayoutInflater = LayoutInflater.from(parent.context)
         }
 
 
         return when (viewType) {
+            TYPE.MATCH.ordinal -> HorizontalRVViewHolder(ViewHolderHorizontalRecyclerViewBinding.inflate(
+                    mLayoutInflater, parent, false)
+            )
             TYPE.HEADLINE.ordinal -> ArticleViewHolder(ViewHolderHeadlineBinding.inflate(
                     mLayoutInflater, parent, false)
             )
@@ -40,22 +47,28 @@ class ArticlesRecyclerViewAdapter(private val mArticleList: List<Article>,
         }
     }
 
-    override fun onBindViewHolder(holder: ArticleViewHolder, position: Int) {
-        val article = mArticleList[position]
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
 
-        holder.view.setOnClickListener {
-            mListener?.onArticleInteraction(article)
+        if (holder is HorizontalRVViewHolder) {
+            holder.bind(mMatchList)
+        } else if (holder is ArticleViewHolder) {
+            val article = mArticleList[position - 1]
+
+            holder.view.setOnClickListener {
+                mListener?.onArticleInteraction(article)
+            }
+            holder.bind(article.url, article.title, article.description)
         }
-        holder.binding(article.url, article.title, article.description)
     }
 
     override fun getItemCount(): Int {
-        return mArticleList.size
+        return mArticleList.size + 1
     }
 
     override fun getItemViewType(position: Int): Int {
-        return when(position) {
-            0 -> TYPE.HEADLINE.ordinal
+        return when (position) {
+            0 -> TYPE.MATCH.ordinal
+            1 -> TYPE.HEADLINE.ordinal
             else -> TYPE.ARTICLE.ordinal
         }
     }

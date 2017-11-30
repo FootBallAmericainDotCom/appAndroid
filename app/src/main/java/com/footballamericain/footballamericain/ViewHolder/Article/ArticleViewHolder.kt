@@ -25,7 +25,7 @@ class ArticleViewHolder(binding: Any, val view: View)
         }
     }
 
-    fun binding(url: String, title: String, description: String) {
+    fun bind(url: String, title: String, description: String) {
         model.url = url
         model.title = title
         model.description = description

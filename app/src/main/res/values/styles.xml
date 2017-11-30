@@ -28,6 +28,7 @@
     <style name="Title.ViewHolder" parent="Title">
         <item name="android:textSize">15sp</item>
         <item name="android:maxLines">2</item>
+        <item name="android:layout_marginTop">5dp</item>
         <item name="android:ellipsize">end</item>
     </style>
 
@@ -40,5 +41,10 @@
     <style name="Title.Articles" parent="Title">
         <item name="android:textSize">20sp</item>
         <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Score" parent="@android:style/TextAppearance">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@android:color/black</item>
     </style>
 </resources>
