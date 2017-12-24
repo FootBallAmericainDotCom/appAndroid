@@ -20,14 +20,14 @@ class MatchRepository {
             model.imageTwo.set(teamTwo.logo)
 
             val matchScoreOne = MatchDummyContent.makeMatchScore()
-            val scoreOne = matchScoreOne[0].toInt() + matchScoreOne[1].toInt()
-            +matchScoreOne[2].toInt() + matchScoreOne[3].toInt()
+            val scoreOne = matchScoreOne[0].toInt() + matchScoreOne[1].toInt() +
+                    matchScoreOne[2].toInt() + matchScoreOne[3].toInt()
 
             model.scoreOne.set(scoreOne.toString())
 
             val matchScoreTwo = MatchDummyContent.makeMatchScore()
-            val scoreTwo = matchScoreTwo[0].toInt() + matchScoreTwo[1].toInt()
-            +matchScoreTwo[2].toInt() + matchScoreTwo[3].toInt()
+            val scoreTwo = matchScoreTwo[0].toInt() + matchScoreTwo[1].toInt() +
+                    matchScoreTwo[2].toInt() + matchScoreTwo[3].toInt()
 
             model.scoreTwo.set(scoreTwo.toString())
 

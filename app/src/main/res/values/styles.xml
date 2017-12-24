@@ -58,4 +58,13 @@
         <item name="android:padding">5dp</item>
         <item name="android:textSize">15sp</item>
     </style>
+
+    <style name="TeamsName" parent="@android:style/TextAppearance"/>
+
+    <style name="TeamsName.Match" parent="TeamsName">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:gravity">center</item>
+
+    </style>
 </resources>

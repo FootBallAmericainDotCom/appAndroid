@@ -23,14 +23,14 @@ object MatchDummyContent {
 
     init {
         // Add some sample items.
-        teams.add(Team("1", "NYG", "http://www.footballamericain.com/images/images/team/100/NYG-logo.jpg"))
-        teams.add(Team("2", "NO", "http://www.footballamericain.com/images/images/team/100/NO-logo.jpg"))
-        teams.add(Team("3", "DAL", "http://www.footballamericain.com/images/images/team/100/DAL-logo.jpg"))
-        teams.add(Team("4", "WAS", "http://www.footballamericain.com/images/images/team/100/WAS-logo.jpg"))
-        teams.add(Team("5", "NE", "http://www.footballamericain.com/images/images/team/100/NE-logo.jpg"))
-        teams.add(Team("6", "BUF", "http://www.footballamericain.com/images/images/team/100/BUF-logo.jpg"))
-        teams.add(Team("7", "IND", "http://www.footballamericain.com/images/images/team/100/IND-logo.jpg"))
-        teams.add(Team("8", "JAX", "http://www.footballamericain.com/images/images/team/100/JAX-logo.jpg"))
+        teams.add(Team("1", "New-York Giant", "NYG", "http://www.footballamericain.com/images/images/team/100/NYG-logo.jpg"))
+        teams.add(Team("2", "New Orleans Saints", "NO", "http://www.footballamericain.com/images/images/team/100/NO-logo.jpg"))
+        teams.add(Team("3", "Dallas Cowboys","DAL", "http://www.footballamericain.com/images/images/team/100/DAL-logo.jpg"))
+        teams.add(Team("4", "Washington Redskins","WAS", "http://www.footballamericain.com/images/images/team/100/WAS-logo.jpg"))
+        teams.add(Team("5", "New England Patriots","NE", "http://www.footballamericain.com/images/images/team/100/NE-logo.jpg"))
+        teams.add(Team("6", "Buffalo Bills","BUF", "http://www.footballamericain.com/images/images/team/100/BUF-logo.jpg"))
+        teams.add(Team("7", "Indianapolis Colts","IND", "http://www.footballamericain.com/images/images/team/100/IND-logo.jpg"))
+        teams.add(Team("8", "Jacksonville Jaguars","JAX", "http://www.footballamericain.com/images/images/team/100/JAX-logo.jpg"))
 
         for (i in 1..COUNT) {
             addItem(createDummyItem(i))
@@ -67,7 +67,7 @@ object MatchDummyContent {
     /**
      * A dummy item representing a piece of title.
      */
-    class Team(val id: String, val name: String, val logo: String)
+    class Team(val id: String, val name: String, val code: String, val logo: String)
 
     class Match(val id: String, val teamOne: Team, val scoreOne: String,
                 val teamTwo: Team, val scoreTwo: String)
