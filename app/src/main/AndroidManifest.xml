@@ -24,7 +24,8 @@
         <activity
             android:name=".Activities.MainActivity"
             android:label="@string/title_activity_main" />
-        <activity android:name=".Activities.ArticleActivity"></activity>
+        <activity android:name=".Activities.ArticleActivity" />
+        <activity android:name=".Activities.Match.MatchActivity"></activity>
     </application>
 
 </manifest>

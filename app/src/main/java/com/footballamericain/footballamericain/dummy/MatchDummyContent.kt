@@ -45,12 +45,23 @@ object MatchDummyContent {
         return Match(position.toString(), selectTeam(), makeScore(), selectTeam(), makeScore())
     }
 
-    private fun selectTeam(): Team {
+    fun selectTeam(): Team {
         return teams[Math.abs(Random().nextInt(teams.size))]
     }
 
-    private fun makeScore(): String {
+    fun makeScore(): String {
         return Random().nextInt(70).toString()
+    }
+
+    fun makeMatchScore(): ArrayList<String> {
+        val array = ArrayList<String>()
+
+        array.add(Random().nextInt(20).toString())
+        array.add(Random().nextInt(20).toString())
+        array.add(Random().nextInt(20).toString())
+        array.add(Random().nextInt(20).toString())
+
+        return array
     }
 
     /**

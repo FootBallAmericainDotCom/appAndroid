@@ -31,7 +31,7 @@
                 tools:src="@mipmap/ic_launcher" />
 
             <TextView
-                style="@style/Score"
+                style="@style/Score.ViewHolder"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:gravity="center"
@@ -62,7 +62,7 @@
                 tools:src="@mipmap/ic_launcher" />
 
             <TextView
-                style="@style/Score"
+                style="@style/Score.ViewHolder"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:gravity="center"
