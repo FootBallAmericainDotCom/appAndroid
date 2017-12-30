@@ -13,7 +13,7 @@ import com.footballamericain.footballamericain.dummy.MatchDummyContent
 class HorizontalRVViewHolder(val binding: ViewHolderHorizontalRecyclerViewBinding)
     : RecyclerView.ViewHolder(binding.root) {
 
-    private val adapter = MatchRecyclerViewAdapter()
+    private val adapter = MatchRecyclerViewAdapter(MatchRecyclerViewAdapter.TYPE.SMALL)
 
     init {
         binding.recyclerView.adapter = adapter

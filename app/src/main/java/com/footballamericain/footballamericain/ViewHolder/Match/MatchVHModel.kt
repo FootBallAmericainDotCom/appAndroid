@@ -1,14 +1,17 @@
 package com.footballamericain.footballamericain.ViewHolder.Match
 
 import android.databinding.BaseObservable
+import android.databinding.ObservableField
 
 /**
  * Created by Jc on 29/11/2017.
  */
 class MatchVHModel : BaseObservable() {
 
-    var teamOne: String = ""
-    var teamTwo: String = ""
-    var scoreOne: String = ""
-    var scoreTwo: String = ""
+    val teamOne = ObservableField<String>("")
+    val teamTwo = ObservableField<String>("")
+    val imageOne = ObservableField<String>("")
+    val imageTwo = ObservableField<String>("")
+    val scoreOne = ObservableField<String>("")
+    val scoreTwo = ObservableField<String>("")
 }

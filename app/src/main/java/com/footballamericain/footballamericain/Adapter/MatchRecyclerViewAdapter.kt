@@ -5,12 +5,17 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.footballamericain.footballamericain.ViewHolder.Match.MatchViewHolder
 import com.footballamericain.footballamericain.databinding.ViewHolderMatchBinding
+import com.footballamericain.footballamericain.databinding.ViewHolderMatchFullBinding
 import com.footballamericain.footballamericain.dummy.MatchDummyContent
 
 /**
  * Created by Jc on 29/11/2017.
  */
-class MatchRecyclerViewAdapter() : RecyclerView.Adapter<MatchViewHolder>() {
+class MatchRecyclerViewAdapter(val type: TYPE) : RecyclerView.Adapter<MatchViewHolder>() {
+
+    enum class TYPE {
+        SMALL, FULL
+    }
 
     var mScoreList: List<MatchDummyContent.Match> = ArrayList()
 
@@ -33,6 +38,13 @@ class MatchRecyclerViewAdapter() : RecyclerView.Adapter<MatchViewHolder>() {
             mLayoutInflater = LayoutInflater.from(parent.context)
         }
 
-        return MatchViewHolder(ViewHolderMatchBinding.inflate(mLayoutInflater, parent, false))
+        return when (type) {
+            MatchRecyclerViewAdapter.TYPE.SMALL -> MatchViewHolder(ViewHolderMatchBinding.inflate(
+                    mLayoutInflater, parent, false)
+            )
+            MatchRecyclerViewAdapter.TYPE.FULL -> MatchViewHolder(ViewHolderMatchFullBinding.inflate(
+                    mLayoutInflater, parent, false)
+            )
+        }
     }
 }

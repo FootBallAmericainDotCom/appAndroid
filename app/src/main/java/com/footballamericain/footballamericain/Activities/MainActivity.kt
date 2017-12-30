@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity
 import com.footballamericain.footballamericain.Adapter.PagerFragmentAdapter
 import com.footballamericain.footballamericain.Fragments.ArticlesFragment
 import com.footballamericain.footballamericain.Fragments.BlankFragment
+import com.footballamericain.footballamericain.Fragments.Scores.ScoresFragment
 import com.footballamericain.footballamericain.R
 import com.footballamericain.footballamericain.databinding.ActivityMainBinding
 import com.footballamericain.footballamericain.dummy.DummyContent
@@ -42,7 +43,7 @@ class MainActivity : AppCompatActivity(), ArticlesFragment.OnArticlesFragmentInt
 
         adapter.addFragment(ArticlesFragment(), getString(R.string.title_news), R.drawable.ic_news)
         adapter.addFragment(BlankFragment(), getString(R.string.title_ranking), R.drawable.ic_ranking)
-        adapter.addFragment(BlankFragment(), getString(R.string.title_score), R.drawable.ic_score)
+        adapter.addFragment(ScoresFragment(), getString(R.string.title_score), R.drawable.ic_score)
 
         return adapter
     }
