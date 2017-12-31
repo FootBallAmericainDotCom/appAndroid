@@ -34,5 +34,6 @@ class MatchRepository {
             model.matchScoreOne.set(matchScoreOne)
             model.matchScoreTwo.set(matchScoreTwo)
         }
+
     }
 }

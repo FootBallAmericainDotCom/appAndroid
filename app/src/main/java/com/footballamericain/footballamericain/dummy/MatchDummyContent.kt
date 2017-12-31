@@ -16,25 +16,40 @@ object MatchDummyContent {
      * An array of sample (dummy) items.
      */
     val ITEMS: MutableList<Match> = ArrayList()
+    val CALENDAR: ArrayList<ArrayList<Match>> = ArrayList()
 
     private val teams: ArrayList<Team> = ArrayList()
 
     private val COUNT = 10
+    private val WEEKS = 6
+    private val GAME_PER_WEEk = 4
 
     init {
         // Add some sample items.
         teams.add(Team("1", "New-York Giant", "NYG", "http://www.footballamericain.com/images/images/team/100/NYG-logo.jpg"))
         teams.add(Team("2", "New Orleans Saints", "NO", "http://www.footballamericain.com/images/images/team/100/NO-logo.jpg"))
-        teams.add(Team("3", "Dallas Cowboys","DAL", "http://www.footballamericain.com/images/images/team/100/DAL-logo.jpg"))
-        teams.add(Team("4", "Washington Redskins","WAS", "http://www.footballamericain.com/images/images/team/100/WAS-logo.jpg"))
-        teams.add(Team("5", "New England Patriots","NE", "http://www.footballamericain.com/images/images/team/100/NE-logo.jpg"))
-        teams.add(Team("6", "Buffalo Bills","BUF", "http://www.footballamericain.com/images/images/team/100/BUF-logo.jpg"))
-        teams.add(Team("7", "Indianapolis Colts","IND", "http://www.footballamericain.com/images/images/team/100/IND-logo.jpg"))
-        teams.add(Team("8", "Jacksonville Jaguars","JAX", "http://www.footballamericain.com/images/images/team/100/JAX-logo.jpg"))
+        teams.add(Team("3", "Dallas Cowboys", "DAL", "http://www.footballamericain.com/images/images/team/100/DAL-logo.jpg"))
+        teams.add(Team("4", "Washington Redskins", "WAS", "http://www.footballamericain.com/images/images/team/100/WAS-logo.jpg"))
+        teams.add(Team("5", "New England Patriots", "NE", "http://www.footballamericain.com/images/images/team/100/NE-logo.jpg"))
+        teams.add(Team("6", "Buffalo Bills", "BUF", "http://www.footballamericain.com/images/images/team/100/BUF-logo.jpg"))
+        teams.add(Team("7", "Indianapolis Colts", "IND", "http://www.footballamericain.com/images/images/team/100/IND-logo.jpg"))
+        teams.add(Team("8", "Jacksonville Jaguars", "JAX", "http://www.footballamericain.com/images/images/team/100/JAX-logo.jpg"))
 
         for (i in 1..COUNT) {
             addItem(createDummyItem(i))
         }
+
+        for (i in 1..WEEKS) {
+            addWeek()
+        }
+    }
+
+    private fun addWeek() {
+        val list = ArrayList<Match>()
+
+        (1..GAME_PER_WEEk).mapTo(list) { createDummyItem(it) }
+
+        CALENDAR.add(list)
     }
 
     private fun addItem(item: Match) {
