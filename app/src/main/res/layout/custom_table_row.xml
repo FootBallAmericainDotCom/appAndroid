@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.footballamericain.footballamericain.Custom.Board.Row.RowViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            pictureURL="@{viewModel.picture}"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginEnd="2dp"
+            android:scaleType="centerCrop"
+            tools:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:text="@{viewModel.team}"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_weight="2"
+            android:gravity="center_vertical"
+            android:textSize="20sp"
+            tools:text="Patriots" />
+
+        <TextView
+            android:text="@{viewModel.win}"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="20sp"
+            tools:text="13" />
+
+        <TextView
+            android:text="@{viewModel.draw}"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="20sp"
+            tools:text="0" />
+
+        <TextView
+            android:text="@{viewModel.lost}"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="20sp"
+            tools:text="3" />
+
+        <TextView
+            android:text="@{viewModel.points}"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="20sp"
+            tools:text="81.3" />
+    </LinearLayout>
+</layout>

@@ -6,7 +6,7 @@ import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import com.footballamericain.footballamericain.Adapter.PagerFragmentAdapter
 import com.footballamericain.footballamericain.Fragments.ArticlesFragment
-import com.footballamericain.footballamericain.Fragments.BlankFragment
+import com.footballamericain.footballamericain.Fragments.RankingFragment
 import com.footballamericain.footballamericain.Fragments.Scores.ScoresFragment
 import com.footballamericain.footballamericain.R
 import com.footballamericain.footballamericain.databinding.ActivityMainBinding
@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity(), ArticlesFragment.OnArticlesFragmentInt
         val adapter = PagerFragmentAdapter(supportFragmentManager)
 
         adapter.addFragment(ArticlesFragment(), getString(R.string.title_news), R.drawable.ic_news)
-        adapter.addFragment(BlankFragment(), getString(R.string.title_ranking), R.drawable.ic_ranking)
+        adapter.addFragment(RankingFragment(), getString(R.string.title_ranking), R.drawable.ic_ranking)
         adapter.addFragment(ScoresFragment(), getString(R.string.title_score), R.drawable.ic_score)
 
         return adapter
