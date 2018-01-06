@@ -9,17 +9,13 @@ import java.util.*
  *
  * TODO: Replace all uses of this class before publishing your app.
  */
-object DummyContent {
+object ArticlesDummyContent {
 
     /**
      * An array of sample (dummy) items.
      */
-    val ITEMS: MutableList<Article> = ArrayList()
+    val ARTICLES: MutableList<Article> = ArrayList()
 
-    /**
-     * A map of sample (dummy) items, by ID.
-     */
-    val ITEM_MAP: MutableMap<String, Article> = HashMap()
 
     private val COUNT = 25
 
@@ -31,8 +27,7 @@ object DummyContent {
     }
 
     private fun addItem(item: Article) {
-        ITEMS.add(item)
-        ITEM_MAP.put(item.id, item)
+        ARTICLES.add(item)
     }
 
     private fun createDummyItem(position: Int): Article {
@@ -49,9 +44,6 @@ object DummyContent {
         return builder.toString()
     }
 
-    /**
-     * A dummy item representing a piece of title.
-     */
     class Article(val id: String, val title: String, val description: String, val url: String) {
 
         override fun toString(): String {
