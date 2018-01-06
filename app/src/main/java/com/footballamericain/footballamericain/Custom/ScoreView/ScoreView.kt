@@ -24,7 +24,7 @@ class ScoreView @JvmOverloads constructor(
         binding.viewModel = viewModel
         val a: TypedArray = context.theme.obtainStyledAttributes(
                 attrs,
-                R.styleable.ScoreView, 0, 0)
+                R.styleable.TableView, 0, 0)
 
         try {
             val qtnbr: String? = a.getString(R.styleable.ScoreView_quartTimeNumber)
@@ -35,30 +35,6 @@ class ScoreView @JvmOverloads constructor(
             a.recycle()
         }
 
-        Log.d("SCORE_VIEW", "Init")
     }
-
-//    companion object {
-//        @JvmStatic
-//        @BindingAdapter("quartTimeNumber")
-//        fun setQuartTimeNumber(scoreView: ScoreView, qtnbr: String?) {
-//            Log.d("SCORE_VIEW", "SetQuartTimeNumber")
-////            scoreView.viewModel.title.set(
-////                    scoreView.context.getString(
-////                            R.string.quart_time_nbr, qtnbr
-////                    )
-////            )
-//        }
-//    }
-
-//    @BindingAdapter("app:scoreOne")
-//    fun setScoreOne(scoreView: ScoreView, score: String) {
-//        scoreView.viewModel.scoreOne.set(score)
-//    }
-//
-//    @BindingAdapter("app:scoreTwo")
-//    fun setScoreTwo(scoreView: ScoreView, score: String) {
-//        scoreView.viewModel.scoreTwo.set(score)
-//    }
 
 }
