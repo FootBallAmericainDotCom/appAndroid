@@ -5,4 +5,8 @@
         <attr name="scoreOne" format="string" />
         <attr name="scoreTwo" format="string" />
     </declare-styleable>
+
+    <declare-styleable name="TableView">
+        <attr name="zoneName" format="reference"/>
+    </declare-styleable>
 </resources>

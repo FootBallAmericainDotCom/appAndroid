@@ -14,57 +14,60 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <ImageView
-            pictureURL="@{viewModel.picture}"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_marginEnd="2dp"
-            android:scaleType="centerCrop"
-            tools:src="@mipmap/ic_launcher" />
-
-        <TextView
-            android:text="@{viewModel.team}"
+        <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="35dp"
-            android:layout_weight="2"
-            android:gravity="center_vertical"
-            android:textSize="20sp"
-            tools:text="Patriots" />
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:orientation="horizontal">
+
+            <ImageView
+                pictureURL="@{viewModel.picture}"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginEnd="2dp"
+                android:scaleType="centerCrop"
+                tools:src="@mipmap/ic_launcher" />
+
+            <TextView
+                style="@style/Table.RowText"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:gravity="center_vertical"
+                android:text="@{viewModel.team}"
+                tools:text="Patriots" />
+
+        </LinearLayout>
 
         <TextView
-            android:text="@{viewModel.win}"
+            style="@style/Table.RowText"
             android:layout_width="0dp"
             android:layout_height="35dp"
             android:layout_weight="1"
-            android:gravity="center"
-            android:textSize="20sp"
+            android:text="@{viewModel.win}"
             tools:text="13" />
 
         <TextView
-            android:text="@{viewModel.draw}"
+            style="@style/Table.RowText"
             android:layout_width="0dp"
             android:layout_height="35dp"
             android:layout_weight="1"
-            android:gravity="center"
-            android:textSize="20sp"
+            android:text="@{viewModel.draw}"
             tools:text="0" />
 
         <TextView
-            android:text="@{viewModel.lost}"
+            style="@style/Table.RowText"
             android:layout_width="0dp"
             android:layout_height="35dp"
             android:layout_weight="1"
-            android:gravity="center"
-            android:textSize="20sp"
+            android:text="@{viewModel.lost}"
             tools:text="3" />
 
         <TextView
-            android:text="@{viewModel.points}"
+            style="@style/Table.RowText"
             android:layout_width="0dp"
             android:layout_height="35dp"
             android:layout_weight="1"
-            android:gravity="center"
-            android:textSize="20sp"
+            android:text="@{viewModel.points}"
             tools:text="81.3" />
     </LinearLayout>
 </layout>
