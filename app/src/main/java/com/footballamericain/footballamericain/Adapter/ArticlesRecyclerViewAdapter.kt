@@ -9,7 +9,7 @@ import com.footballamericain.footballamericain.ViewHolder.HorizontalRecyclerView
 import com.footballamericain.footballamericain.databinding.ViewHolderArticleBinding
 import com.footballamericain.footballamericain.databinding.ViewHolderHeadlineBinding
 import com.footballamericain.footballamericain.databinding.ViewHolderHorizontalRecyclerViewBinding
-import com.footballamericain.footballamericain.dummy.DummyContent.Article
+import com.footballamericain.footballamericain.dummy.ArticlesDummyContent.Article
 import com.footballamericain.footballamericain.dummy.MatchDummyContent.Match
 
 /**

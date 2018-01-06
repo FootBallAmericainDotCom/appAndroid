@@ -10,11 +10,11 @@ import com.footballamericain.footballamericain.Fragments.RankingFragment
 import com.footballamericain.footballamericain.Fragments.Scores.ScoresFragment
 import com.footballamericain.footballamericain.R
 import com.footballamericain.footballamericain.databinding.ActivityMainBinding
-import com.footballamericain.footballamericain.dummy.DummyContent
+import com.footballamericain.footballamericain.dummy.ArticlesDummyContent
 import devlight.io.library.ntb.NavigationTabBar
 
 class MainActivity : AppCompatActivity(), ArticlesFragment.OnArticlesFragmentInteractionListener {
-    override fun onArticleInteraction(item: DummyContent.Article) {
+    override fun onArticleInteraction(item: ArticlesDummyContent.Article) {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

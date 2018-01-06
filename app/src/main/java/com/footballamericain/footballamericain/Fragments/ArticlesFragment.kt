@@ -7,10 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.footballamericain.footballamericain.Adapter.ArticlesRecyclerViewAdapter
+import com.footballamericain.footballamericain.Repository.ArticlesRepository
+import com.footballamericain.footballamericain.Repository.MatchRepository
 import com.footballamericain.footballamericain.databinding.FragmentArticlesListBinding
-import com.footballamericain.footballamericain.dummy.DummyContent
-import com.footballamericain.footballamericain.dummy.DummyContent.Article
-import com.footballamericain.footballamericain.dummy.MatchDummyContent
+import com.footballamericain.footballamericain.dummy.ArticlesDummyContent.Article
 
 /**
  * A fragment representing a list of Items.
@@ -30,7 +30,8 @@ class ArticlesFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
         val binding = FragmentArticlesListBinding.inflate(inflater, container, false)
 
-        binding.recyclerView.adapter = ArticlesRecyclerViewAdapter(DummyContent.ITEMS, MatchDummyContent.ITEMS,mListener)
+        binding.recyclerView.adapter = ArticlesRecyclerViewAdapter(
+                ArticlesRepository.getArticles(), MatchRepository.getMatches(),mListener)
 
         return binding.root
     }

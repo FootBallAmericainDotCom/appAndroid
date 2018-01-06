@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.footballamericain.footballamericain.Adapter.MatchExpandableAdapter
 import com.footballamericain.footballamericain.Adapter.MatchRecyclerViewAdapter
+import com.footballamericain.footballamericain.Repository.MatchRepository
 import com.footballamericain.footballamericain.databinding.FragmentScoresBinding
 import com.footballamericain.footballamericain.dummy.MatchDummyContent
 
@@ -17,7 +18,7 @@ import com.footballamericain.footballamericain.dummy.MatchDummyContent
  */
 class ScoresFragment : Fragment() {
 
-    private val adapter = MatchExpandableAdapter(MatchDummyContent.CALENDAR)
+    private val adapter = MatchExpandableAdapter(MatchRepository.getCalendar())
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {

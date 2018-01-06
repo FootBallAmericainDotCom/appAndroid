@@ -8,6 +8,7 @@ import com.footballamericain.footballamericain.Activities.Match.MatchActivity
 import com.footballamericain.footballamericain.databinding.ViewHolderMatchBinding
 import com.footballamericain.footballamericain.databinding.ViewHolderMatchFullBinding
 import com.footballamericain.footballamericain.dummy.MatchDummyContent
+import com.footballamericain.footballamericain.dummy.TeamDummyContent
 
 /**
  * Created by Jc on 29/11/2017.
@@ -26,8 +27,8 @@ class MatchViewHolder(val binding: Any, val root: View) : SectionedViewHolder(ro
         }
     }
 
-    fun bind(teamOne: MatchDummyContent.Team, scoreOne: String,
-             teamTwo: MatchDummyContent.Team, scoreTwo: String) {
+    fun bind(teamOne: TeamDummyContent.Team, scoreOne: String,
+             teamTwo: TeamDummyContent.Team, scoreTwo: String) {
 
 
         model.teamOne.set(teamOne.name)

@@ -2,6 +2,7 @@ package com.footballamericain.footballamericain.Repository
 
 import com.footballamericain.footballamericain.Activities.Match.MatchActivityViewModel
 import com.footballamericain.footballamericain.dummy.MatchDummyContent
+import com.footballamericain.footballamericain.dummy.TeamDummyContent
 
 /**
  * Created by Jc on 19/12/2017.
@@ -11,11 +12,11 @@ class MatchRepository {
     companion object {
         fun getMatchById(id: Int, model: MatchActivityViewModel) {
 
-            val teamOne = MatchDummyContent.selectTeam()
+            val teamOne = TeamDummyContent.selectTeam()
             model.teamOne.set(teamOne.name)
             model.imageOne.set(teamOne.logo)
 
-            val teamTwo = MatchDummyContent.selectTeam()
+            val teamTwo = TeamDummyContent.selectTeam()
             model.teamTwo.set(teamTwo.name)
             model.imageTwo.set(teamTwo.logo)
 
@@ -35,5 +36,12 @@ class MatchRepository {
             model.matchScoreTwo.set(matchScoreTwo)
         }
 
+        fun getMatches(): List<MatchDummyContent.Match> {
+            return MatchDummyContent.MATCHS
+        }
+
+        fun getCalendar(): ArrayList<ArrayList<MatchDummyContent.Match>> {
+            return MatchDummyContent.CALENDAR
+        }
     }
 }
