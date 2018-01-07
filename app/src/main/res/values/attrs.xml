@@ -7,6 +7,6 @@
     </declare-styleable>
 
     <declare-styleable name="TableView">
-        <attr name="zoneName" format="reference"/>
+        <attr name="zoneName" format="string"/>
     </declare-styleable>
 </resources>

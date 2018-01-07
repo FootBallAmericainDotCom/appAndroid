@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -12,36 +13,44 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        bindingBackground="@{viewModel.backgroundColor}"
         android:orientation="horizontal">
 
-        <LinearLayout
+        <android.support.constraint.ConstraintLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="3"
-            android:orientation="horizontal">
+            android:layout_weight="3">
 
             <ImageView
+                android:id="@+id/image"
                 pictureURL="@{viewModel.picture}"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
-                android:layout_marginEnd="2dp"
                 android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
                 tools:src="@mipmap/ic_launcher" />
+
 
             <TextView
                 style="@style/Table.RowText"
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
                 android:gravity="center_vertical"
                 android:text="@{viewModel.team}"
-                tools:text="Patriots" />
-
-        </LinearLayout>
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/image"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Patriots Patriots " />
+        </android.support.constraint.ConstraintLayout>
 
         <TextView
             style="@style/Table.RowText"
             android:layout_width="0dp"
-            android:layout_height="35dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="@{viewModel.win}"
             tools:text="13" />
@@ -49,7 +58,7 @@
         <TextView
             style="@style/Table.RowText"
             android:layout_width="0dp"
-            android:layout_height="35dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="@{viewModel.draw}"
             tools:text="0" />
@@ -57,7 +66,7 @@
         <TextView
             style="@style/Table.RowText"
             android:layout_width="0dp"
-            android:layout_height="35dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="@{viewModel.lost}"
             tools:text="3" />
@@ -65,7 +74,7 @@
         <TextView
             style="@style/Table.RowText"
             android:layout_width="0dp"
-            android:layout_height="35dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="@{viewModel.points}"
             tools:text="81.3" />

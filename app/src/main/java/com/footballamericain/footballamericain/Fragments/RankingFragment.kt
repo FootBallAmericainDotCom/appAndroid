@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.footballamericain.footballamericain.Adapter.PagerFragmentAdapter
+import com.footballamericain.footballamericain.Fragments.ConferenceRanking.ConferenceRankingFragment
 import com.footballamericain.footballamericain.R
 import com.footballamericain.footballamericain.databinding.FragmentRankingBinding
 import devlight.io.library.ntb.NavigationTabBar

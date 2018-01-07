@@ -15,4 +15,19 @@
     <string name="table_point">Pct</string>
 
     <string name="afc_east">AFC Est</string>
+    <string name="afc_north">AFC North</string>
+    <string name="afc_west">AFC West</string>
+    <string name="afc_south">AFC South</string>
+
+    <string name="nfc_east">NFC Est</string>
+    <string name="nfc_north">NFC North</string>
+    <string name="nfc_west">NFC West</string>
+    <string name="nfc_south">NFC South</string>
+
+    <string-array name="AFC">
+        <item>AFC North</item>
+        <item>AFC South</item>
+        <item>AFC East</item>
+        <item>AFC West</item>
+    </string-array>
 </resources>

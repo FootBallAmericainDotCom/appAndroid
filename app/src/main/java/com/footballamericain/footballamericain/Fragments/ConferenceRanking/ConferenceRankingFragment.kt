@@ -1,4 +1,4 @@
-package com.footballamericain.footballamericain.Fragments
+package com.footballamericain.footballamericain.Fragments.ConferenceRanking
 
 
 import android.os.Bundle
@@ -16,34 +16,39 @@ import com.footballamericain.footballamericain.databinding.FragmentConferenceRan
  */
 class ConferenceRankingFragment : Fragment() {
 
-    // TODO: Rename and change types of parameters
     private var mParam1: String? = null
-    private var mParam2: String? = null
+    private lateinit var viewModel: ConferenceRankingViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        viewModel = ConferenceRankingViewModel(context)
+
         if (arguments != null) {
             mParam1 = arguments.getString(ARG_PARAM1)
-            mParam2 = arguments.getString(ARG_PARAM2)
         }
     }
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val binding = FragmentConferenceRankingBinding.inflate(inflater, container, false)
+        binding.viewModel = viewModel
+
+        viewModel.setRow(binding.north)
+        viewModel.setRow(binding.south)
+        viewModel.setRow(binding.east)
+        viewModel.setRow(binding.west)
 
         return binding.root
     }
 
     companion object {
         private val ARG_PARAM1 = "param1"
-        private val ARG_PARAM2 = "param2"
 
-        fun newInstance(param1: String, param2: String): ConferenceRankingFragment {
+        fun newInstance(param1: String): ConferenceRankingFragment {
             val fragment = ConferenceRankingFragment()
             val args = Bundle()
             args.putString(ARG_PARAM1, param1)
-            args.putString(ARG_PARAM2, param2)
             fragment.arguments = args
             return fragment
         }
