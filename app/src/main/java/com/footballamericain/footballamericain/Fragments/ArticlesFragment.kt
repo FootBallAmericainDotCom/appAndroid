@@ -9,29 +9,18 @@ import android.view.ViewGroup
 import com.footballamericain.footballamericain.Adapter.ArticlesRecyclerViewAdapter
 import com.footballamericain.footballamericain.Repository.ArticlesRepository
 import com.footballamericain.footballamericain.Repository.MatchRepository
-import com.footballamericain.footballamericain.databinding.FragmentArticlesListBinding
+import com.footballamericain.footballamericain.databinding.FragmentRecyclerViewBinding
 import com.footballamericain.footballamericain.dummy.ArticlesDummyContent.Article
 
-/**
- * A fragment representing a list of Items.
- *
- *
- * Activities containing this fragment MUST implement the [OnListFragmentInteractionListener]
- * interface.
- */
-/**
- * Mandatory empty constructor for the fragment manager to instantiate the
- * fragment (e.g. upon screen orientation changes).
- */
 class ArticlesFragment : Fragment() {
     private var mListener: OnArticlesFragmentInteractionListener? = null
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        val binding = FragmentArticlesListBinding.inflate(inflater, container, false)
+        val binding = FragmentRecyclerViewBinding.inflate(inflater, container, false)
 
         binding.recyclerView.adapter = ArticlesRecyclerViewAdapter(
-                ArticlesRepository.getArticles(), MatchRepository.getMatches(),mListener)
+                ArticlesRepository.getArticles(), MatchRepository.getMatches(), mListener)
 
         return binding.root
     }
