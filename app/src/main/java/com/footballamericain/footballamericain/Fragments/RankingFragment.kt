@@ -34,18 +34,7 @@ class RankingFragment : Fragment() {
         val adapter = getAdapter()
         binding.viewPager.adapter = adapter
 
-        val models = ArrayList<NavigationTabBar.Model>()
-        repeat(adapter.count) { position ->
-            models.add(NavigationTabBar.Model
-                    .Builder(ContextCompat.getDrawable(context, adapter.getPageIcon(position)),
-                            ContextCompat.getColor(context, android.R.color.holo_green_light))
-                    .title(adapter.getPageTitle(position).toString())
-                    .build()
-            )
-        }
-
-        binding.tabLayout?.models = models
-        binding.tabLayout?.setViewPager(binding.viewPager)
+        binding.tabLayout?.setupWithViewPager(binding.viewPager)
 
         return binding.root
     }

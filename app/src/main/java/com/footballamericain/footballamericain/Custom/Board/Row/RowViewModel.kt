@@ -1,6 +1,7 @@
 package com.footballamericain.footballamericain.Custom.Board.Row
 
 import android.databinding.ObservableField
+import com.footballamericain.footballamericain.R
 import com.footballamericain.footballamericain.dummy.RankingDummyContent
 
 /**
@@ -17,7 +18,7 @@ class RowViewModel(position: Int, rank: RankingDummyContent.Rank) {
     val backgroundColor = ObservableField<Int>(
             when ((position) % 2) {
                 1 -> android.R.color.white
-                else -> android.R.color.darker_gray
+                else -> R.color.gray73
             }
     )
 }

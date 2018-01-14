@@ -14,6 +14,7 @@
         tools:context="com.footballamericain.footballamericain.Fragments.ConferenceRanking.ConferenceRankingFragment">
 
         <LinearLayout
+            android:padding="7dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -22,28 +23,27 @@
                 android:id="@+id/north"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
+                android:layout_marginBottom="10dp"
                 app:zoneName="@{viewModel.ordinate[0]}" />
 
             <com.footballamericain.footballamericain.Custom.Board.Table.TableView
                 android:id="@+id/south"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
+                android:layout_marginBottom="10dp"
                 app:zoneName="@{viewModel.ordinate[1]}" />
 
             <com.footballamericain.footballamericain.Custom.Board.Table.TableView
                 android:id="@+id/east"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
+                android:layout_marginBottom="10dp"
                 app:zoneName="@{viewModel.ordinate[2]}" />
 
             <com.footballamericain.footballamericain.Custom.Board.Table.TableView
                 android:id="@+id/west"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
                 app:zoneName="@{viewModel.ordinate[3]}" />
         </LinearLayout>
     </ScrollView>
