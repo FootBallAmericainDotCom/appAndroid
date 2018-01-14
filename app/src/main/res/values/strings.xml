@@ -23,6 +23,7 @@
     <string name="nfc_north">NFC North</string>
     <string name="nfc_west">NFC West</string>
     <string name="nfc_south">NFC South</string>
+    <string name="title_teams">Teams</string>
 
     <string-array name="AFC">
         <item>AFC North</item>

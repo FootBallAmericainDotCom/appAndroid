@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import com.footballamericain.footballamericain.Adapter.PagerFragmentAdapter
+import com.footballamericain.footballamericain.Fragments.AllTeams.AllTeamsFragment
 import com.footballamericain.footballamericain.Fragments.ArticlesFragment
 import com.footballamericain.footballamericain.Fragments.RankingFragment
 import com.footballamericain.footballamericain.Fragments.Scores.ScoresFragment
@@ -43,6 +44,7 @@ class MainActivity : AppCompatActivity(), ArticlesFragment.OnArticlesFragmentInt
 
         adapter.addFragment(ArticlesFragment(), getString(R.string.title_news), R.drawable.ic_news)
         adapter.addFragment(RankingFragment(), getString(R.string.title_ranking), R.drawable.ic_ranking)
+        adapter.addFragment(AllTeamsFragment(), getString(R.string.title_teams), R.drawable.ic_football_jersey)
         adapter.addFragment(ScoresFragment(), getString(R.string.title_score), R.drawable.ic_score)
 
         return adapter
