@@ -1,6 +1,9 @@
 package com.footballamericain.footballamericain.App
 
 import android.databinding.BindingAdapter
+import android.graphics.Color
+import android.support.design.widget.CollapsingToolbarLayout
+import android.support.design.widget.TabLayout
 import android.util.Log
 import android.view.View
 import android.widget.ImageView
@@ -64,6 +67,30 @@ class BindingAdapter {
             view.setBackgroundResource(int)
         }
 
+        @JvmStatic
+        @BindingAdapter("android:background")
+        fun setBackground(view: View, colorText: String) {
+            view.setBackgroundColor(Color.parseColor(colorText))
+        }
+
+        @JvmStatic
+        @BindingAdapter("app:tabIndicatorColor")
+        fun setIndicatorColor(tabLayout: TabLayout, color: String) {
+            tabLayout.setSelectedTabIndicatorColor(Color.parseColor(color))
+        }
+
+        @JvmStatic
+        @BindingAdapter("app:tabSelectedTextColor")
+        fun setTabSelectedTextColor(tabLayout: TabLayout, color: String) {
+            tabLayout.setTabTextColors(Color.parseColor("#ffffff"), Color.parseColor(color) )
+        }
+
+        @JvmStatic
+        @BindingAdapter("app:contentScrim")
+        fun setContentScrimColor(toolbar: CollapsingToolbarLayout, color: String) {
+            toolbar.setContentScrimColor(Color.parseColor(color))
+            toolbar.setStatusBarScrimColor(Color.parseColor(color))
+        }
 
     }
 }

@@ -11,14 +11,14 @@ object TeamDummyContent {
     val TEAMS: ArrayList<Team> = ArrayList()
 
     init {
-        TEAMS.add(Team("1", "New-York Giant", "Giant", "NYG", "http://www.footballamericain.com/images/images/team/100/NYG-logo.jpg"))
-        TEAMS.add(Team("2", "New Orleans Saints", "Saints", "NO", "http://www.footballamericain.com/images/images/team/100/NO-logo.jpg"))
-        TEAMS.add(Team("3", "Dallas Cowboys", "Cowboys", "DAL", "http://www.footballamericain.com/images/images/team/100/DAL-logo.jpg"))
-        TEAMS.add(Team("4", "Washington Redskins", "Redskins", "WAS", "http://www.footballamericain.com/images/images/team/100/WAS-logo.jpg"))
-        TEAMS.add(Team("5", "New England Patriots", "Patriots", "NE", "http://www.footballamericain.com/images/images/team/100/NE-logo.jpg"))
-        TEAMS.add(Team("6", "Buffalo Bills", "Bills", "BUF", "http://www.footballamericain.com/images/images/team/100/BUF-logo.jpg"))
-        TEAMS.add(Team("7", "Indianapolis Colts", "Colts", "IND", "http://www.footballamericain.com/images/images/team/100/IND-logo.jpg"))
-        TEAMS.add(Team("8", "Jacksonville Jaguars", "Jaguars", "JAX", "http://www.footballamericain.com/images/images/team/100/JAX-logo.jpg"))
+        TEAMS.add(Team("0", "New-York Giant", "Giant", "NYG", "http://www.footballamericain.com/img_equipe/300/nyg.png"))
+        TEAMS.add(Team("1", "New Orleans Saints", "Saints", "NO", "http://www.footballamericain.com/img_equipe/300/no.png"))
+        TEAMS.add(Team("2", "Dallas Cowboys", "Cowboys", "DAL", "http://www.footballamericain.com/img_equipe/300/dal.png"))
+        TEAMS.add(Team("3", "Washington Redskins", "Redskins", "WAS", "http://www.footballamericain.com/img_equipe/300/was.png"))
+        TEAMS.add(Team("4", "New England Patriots", "Patriots", "NE", "http://www.footballamericain.com/img_equipe/300/ne.png"))
+        TEAMS.add(Team("5", "Buffalo Bills", "Bills", "BUF", "http://www.footballamericain.com/img_equipe/300/buf.png"))
+        TEAMS.add(Team("6", "Indianapolis Colts", "Colts", "IND", "http://www.footballamericain.com/img_equipe/300/ind.png"))
+        TEAMS.add(Team("7", "Jacksonville Jaguars", "Jaguars", "JAX", "http://www.footballamericain.com/img_equipe/300/jac.png"))
     }
 
     fun selectTeam(): Team {

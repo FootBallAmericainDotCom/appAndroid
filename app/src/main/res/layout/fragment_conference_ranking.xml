@@ -1,4 +1,5 @@
-<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
 
@@ -7,44 +8,52 @@
             type="com.footballamericain.footballamericain.Fragments.ConferenceRanking.ConferenceRankingViewModel" />
     </data>
 
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
+    <android.support.v4.widget.NestedScrollView
+        android:fillViewport="true"
         android:layout_height="match_parent"
-        tools:context="com.footballamericain.footballamericain.Fragments.ConferenceRanking.ConferenceRankingFragment">
+        android:layout_width="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <LinearLayout
-            android:padding="7dp"
+
+        <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            tools:context="com.footballamericain.footballamericain.Fragments.ConferenceRanking.ConferenceRankingFragment">
 
-            <com.footballamericain.footballamericain.Custom.Board.Table.TableView
-                android:id="@+id/north"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                app:zoneName="@{viewModel.ordinate[0]}" />
+                android:orientation="vertical"
+                android:padding="7dp">
 
-            <com.footballamericain.footballamericain.Custom.Board.Table.TableView
-                android:id="@+id/south"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                app:zoneName="@{viewModel.ordinate[1]}" />
+                <com.footballamericain.footballamericain.Custom.Board.Table.TableView
+                    android:id="@+id/north"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    app:zoneName="@{viewModel.ordinate[0]}" />
 
-            <com.footballamericain.footballamericain.Custom.Board.Table.TableView
-                android:id="@+id/east"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                app:zoneName="@{viewModel.ordinate[2]}" />
+                <com.footballamericain.footballamericain.Custom.Board.Table.TableView
+                    android:id="@+id/south"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    app:zoneName="@{viewModel.ordinate[1]}" />
 
-            <com.footballamericain.footballamericain.Custom.Board.Table.TableView
-                android:id="@+id/west"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:zoneName="@{viewModel.ordinate[3]}" />
-        </LinearLayout>
-    </ScrollView>
+                <com.footballamericain.footballamericain.Custom.Board.Table.TableView
+                    android:id="@+id/east"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    app:zoneName="@{viewModel.ordinate[2]}" />
+
+                <com.footballamericain.footballamericain.Custom.Board.Table.TableView
+                    android:id="@+id/west"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:zoneName="@{viewModel.ordinate[3]}" />
+            </LinearLayout>
+        </ScrollView>
+    </android.support.v4.widget.NestedScrollView>
 </layout>

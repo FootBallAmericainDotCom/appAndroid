@@ -3,7 +3,6 @@ package com.footballamericain.footballamericain.Adapter
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import com.footballamericain.footballamericain.Fragments.ArticlesFragment.OnArticlesFragmentInteractionListener
 import com.footballamericain.footballamericain.ViewHolder.Article.ArticleViewHolder
 import com.footballamericain.footballamericain.ViewHolder.HorizontalRecyclerView.HorizontalRVViewHolder
 import com.footballamericain.footballamericain.databinding.ViewHolderArticleBinding
@@ -12,14 +11,8 @@ import com.footballamericain.footballamericain.databinding.ViewHolderHorizontalR
 import com.footballamericain.footballamericain.dummy.ArticlesDummyContent.Article
 import com.footballamericain.footballamericain.dummy.MatchDummyContent.Match
 
-/**
- * [RecyclerView.Adapter] that can display a [Article] and makes a call to the
- * specified [OnArticlesFragmentInteractionListener].
- * TODO: Replace the implementation with code for your data type.
- */
 class ArticlesRecyclerViewAdapter(private val mArticleList: List<Article>,
-                                  private val mMatchList: List<Match>,
-                                  private val mListener: OnArticlesFragmentInteractionListener?)
+                                  private val mMatchList: List<Match>)
     : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private enum class TYPE {
@@ -54,9 +47,6 @@ class ArticlesRecyclerViewAdapter(private val mArticleList: List<Article>,
         } else if (holder is ArticleViewHolder) {
             val article = mArticleList[position - 1]
 
-            holder.view.setOnClickListener {
-                mListener?.onArticleInteraction(article)
-            }
             holder.bind(article.url, article.title, article.description)
         }
     }

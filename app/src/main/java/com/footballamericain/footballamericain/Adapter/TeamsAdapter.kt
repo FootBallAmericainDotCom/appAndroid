@@ -14,7 +14,7 @@ class TeamsAdapter(private val list: ArrayList<TeamDummyContent.Team>) : Recycle
     private var mLayoutInflater: LayoutInflater? = null
 
     override fun onBindViewHolder(holder: TeamViewHolder?, position: Int) {
-        holder?.bind(list[position].logo, list[position].name)
+        holder?.bind(list[position].id.toInt(), list[position].logo, list[position].name)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TeamViewHolder {

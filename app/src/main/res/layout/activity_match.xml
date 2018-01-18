@@ -209,7 +209,7 @@
             <!--tools:src="@mipmap/ic_launcher" />-->
             <!--</TableRow>-->
 
-            <!--<TableRow android:background="@color/gray73">-->
+            <!--<TableRow android:backgrouncolorPrimaryolor/gray73">-->
 
             <!--<TextView-->
             <!--style="@style/ScTableViewable"-->
@@ -262,7 +262,7 @@
             <!--tools:text="7" />-->
             <!--</TableRow>-->
 
-            <!--<TableRow android:background="@color/gray73">-->
+            <!--<TableRow android:backgrouncolorPrimaryolor/gray73">-->
 
             <!--<TextView-->
             <!--style="@style/ScTableViewable"-->
@@ -314,7 +314,7 @@
             <!--tools:text="7" />-->
             <!--</TableRow>-->
 
-            <!--<TableRow android:background="@color/gray73">-->
+            <!--<TableRow android:backgrouncolorPrimaryolor/gray73">-->
 
             <!--<TextView-->
             <!--style="@style/ScTableViewable"-->

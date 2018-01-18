@@ -3,6 +3,7 @@ package com.footballamericain.footballamericain.Adapter
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
+import com.footballamericain.footballamericain.R
 
 /**
  * Created by Jc on 14/11/2017.
@@ -33,5 +34,11 @@ class PagerFragmentAdapter(manager: FragmentManager) : FragmentPagerAdapter(mana
         fragmentList.add(fragment)
         titleList.add(title)
         iconList.add(icon)
+    }
+
+    fun addFragment(fragment: Fragment, title: String) {
+        fragmentList.add(fragment)
+        titleList.add(title)
+        iconList.add(R.drawable.logo)
     }
 }

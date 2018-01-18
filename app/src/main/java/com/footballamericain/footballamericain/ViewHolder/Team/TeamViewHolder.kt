@@ -1,6 +1,8 @@
 package com.footballamericain.footballamericain.ViewHolder.Team
 
+import android.content.Intent
 import android.support.v7.widget.RecyclerView
+import com.footballamericain.footballamericain.Activities.Team.TeamActivity
 import com.footballamericain.footballamericain.databinding.ViewHolderTeamBinding
 
 /**
@@ -15,8 +17,16 @@ class TeamViewHolder(binding: ViewHolderTeamBinding) : RecyclerView.ViewHolder(b
     }
 
 
-    fun bind(logo: String, name: String) {
+    fun bind(id : Int, logo: String, name: String) {
         model.logo.set(logo)
         model.name.set(name)
+
+        itemView.setOnClickListener {
+            val intent = Intent(it.context, TeamActivity::class.java)
+            intent.putExtra(TeamActivity.TEAM_ID, id)
+
+            it.context.startActivity(intent)
+
+        }
     }
 }
