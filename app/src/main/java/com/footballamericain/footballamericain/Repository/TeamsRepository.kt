@@ -30,5 +30,9 @@ class TeamsRepository {
             }
 
         }
+
+        fun getTeamById(id: Int) : TeamDummyContent.Team {
+            return TeamDummyContent.TEAMS[id]
+        }
     }
 }

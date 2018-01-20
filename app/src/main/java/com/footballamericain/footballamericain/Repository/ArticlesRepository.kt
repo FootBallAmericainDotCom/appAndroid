@@ -8,7 +8,12 @@ import com.footballamericain.footballamericain.dummy.ArticlesDummyContent.Articl
  */
 class ArticlesRepository {
     companion object {
-        fun getArticles() : MutableList<Article> {
+
+        fun getArticles(): MutableList<Article> {
+            return ArticlesDummyContent.ARTICLES
+        }
+
+        fun getArticlesByTeamID(id : String): MutableList<Article> {
             return ArticlesDummyContent.ARTICLES
         }
     }

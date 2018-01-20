@@ -35,6 +35,14 @@ object MatchDummyContent {
         }
     }
 
+     fun getTeamMatch(teamID: Int): MutableList<Match> {
+        val list: MutableList<Match> = ArrayList()
+
+        (1..COUNT).mapTo(list) { createDummyItem(teamID, it) }
+
+         return list
+    }
+
     private fun addWeek() {
         val list = ArrayList<Match>()
 
@@ -54,6 +62,12 @@ object MatchDummyContent {
         )
     }
 
+    private fun createDummyItem(teamID: Int, position: Int): Match {
+        return Match(position.toString(),
+                TeamDummyContent.selectTeam(teamID), makeScore(),
+                TeamDummyContent.selectTeam(), makeScore()
+        )
+    }
 
     private fun makeScore(): String {
         return Random().nextInt(70).toString()

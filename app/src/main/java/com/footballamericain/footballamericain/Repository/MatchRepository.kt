@@ -40,6 +40,10 @@ class MatchRepository {
             return MatchDummyContent.MATCHS
         }
 
+        fun getMatchesByTeamID(teamId: String): List<MatchDummyContent.Match> {
+            return MatchDummyContent.getTeamMatch(teamId.toInt())
+        }
+
         fun getCalendar(): ArrayList<ArrayList<MatchDummyContent.Match>> {
             return MatchDummyContent.CALENDAR
         }

@@ -12,13 +12,45 @@ import com.footballamericain.footballamericain.databinding.FragmentRecyclerViewB
 
 class ArticlesFragment : Fragment() {
 
+    private var id: String? = null
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        if (arguments != null) {
+            id = arguments.getString(ID)
+        }
+    }
+
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val binding = FragmentRecyclerViewBinding.inflate(inflater, container, false)
 
-        binding.recyclerView.adapter = ArticlesRecyclerViewAdapter(
-                ArticlesRepository.getArticles(), MatchRepository.getMatches())
+        if (id == null) {
+            binding.recyclerView.adapter = ArticlesRecyclerViewAdapter(
+                    ArticlesRepository.getArticles(), MatchRepository.getMatches())
+        } else {
+            id?.let {
+                binding.recyclerView.adapter = ArticlesRecyclerViewAdapter(
+                        ArticlesRepository.getArticlesByTeamID(it),
+                        MatchRepository.getMatchesByTeamID(it)
+                )
+            }
+        }
 
         return binding.root
+    }
+
+
+    companion object {
+        private val ID = "ID"
+
+        fun newInstance(id: String?): ArticlesFragment {
+            val fragment = ArticlesFragment()
+            val args = Bundle()
+            args.putString(ID,id)
+
+            fragment.arguments = args
+            return fragment
+        }
     }
 }
