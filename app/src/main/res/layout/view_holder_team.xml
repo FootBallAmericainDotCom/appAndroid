@@ -10,26 +10,26 @@
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="@dimen/view_holder_team_dimension"
+        android:layout_width="match_parent"
         android:layout_height="@dimen/view_holder_team_dimension"
-        android:orientation="vertical">
+        android:orientation="horizontal"
+        android:paddingEnd="10dp"
+        android:paddingStart="10dp">
 
         <ImageView
             android:id="@+id/thumbnail"
             pictureURL="@{model.logo}"
-            android:layout_width="match_parent"
+            android:layout_width="@dimen/view_holder_team_dimension"
             android:layout_height="match_parent"
-            android:layout_weight="1"
             android:scaleType="centerInside"
             tools:src="@drawable/background_splash" />
 
         <TextView
-            android:text="@{model.name}"
+            style="@style/TeamsName.AllTeam.ViewHolder"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="3"
-            android:gravity="center"
-            tools:text="CowBoy" />
-
+            android:layout_marginStart="10dp"
+            android:text="@{model.name}"
+            tools:text="CowBoys" />
     </LinearLayout>
 </layout>
