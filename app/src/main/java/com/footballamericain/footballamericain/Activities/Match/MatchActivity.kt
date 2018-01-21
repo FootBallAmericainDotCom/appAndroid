@@ -17,6 +17,6 @@ class MatchActivity : AppCompatActivity() {
 
         binding.viewModel = ViewModelProviders.of(this).get(MatchActivityViewModel::class.java)
 
-        MatchRepository.getMatchById(78, binding.viewModel)
+        MatchRepository.getMatchById(78, binding.viewModel, binding.scoreLayout)
     }
 }

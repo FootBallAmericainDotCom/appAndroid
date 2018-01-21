@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="ScoreView">
-        <attr name="quartTimeNumber" format="string" />
-        <attr name="scoreOne" format="string" />
-        <attr name="scoreTwo" format="string" />
-    </declare-styleable>
-
     <declare-styleable name="TableView">
         <attr name="zoneName" format="string"/>
     </declare-styleable>

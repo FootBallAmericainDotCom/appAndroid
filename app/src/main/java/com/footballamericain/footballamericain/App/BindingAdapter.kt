@@ -31,31 +31,6 @@ class BindingAdapter {
         }
 
         @JvmStatic
-        @BindingAdapter("quartTimeNumber")
-        fun setQuartTimeNumber(view: View, qtnbr: String?) {
-            Log.d("SCORE_VIEW", "SetQuartTimeNumber")
-            if (view is ScoreView) {
-                view.viewModel.title.set(
-                        view.context.getString(
-                                R.string.quart_time_nbr, qtnbr
-                        )
-                )
-            }
-        }
-
-        @JvmStatic
-        @BindingAdapter("scoreOne")
-        fun setScoreOne(scoreView: ScoreView, score: String) {
-            scoreView.viewModel.scoreOne.set(score)
-        }
-
-        @JvmStatic
-        @BindingAdapter("scoreTwo")
-        fun setScoreTwo(scoreView: ScoreView, score: String) {
-            scoreView.viewModel.scoreTwo.set(score)
-        }
-
-        @JvmStatic
         @BindingAdapter("zoneName")
         fun setzoneName(tableView: TableView, name: String) {
             tableView.viewModel.zone.set(name)
@@ -82,7 +57,7 @@ class BindingAdapter {
         @JvmStatic
         @BindingAdapter("app:tabSelectedTextColor")
         fun setTabSelectedTextColor(tabLayout: TabLayout, color: String) {
-            tabLayout.setTabTextColors(Color.parseColor("#ffffff"), Color.parseColor(color) )
+            tabLayout.setTabTextColors(Color.parseColor("#ffffff"), Color.parseColor(color))
         }
 
         @JvmStatic

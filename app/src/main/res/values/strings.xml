@@ -10,7 +10,7 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="quart_time_nbr">Quart Time %s</string>
+    <string name="quart_time_nbr">Quart Time %d</string>
     <string name="total">Total</string>
     <string name="table_won">G</string>
     <string name="table_draw">N</string>

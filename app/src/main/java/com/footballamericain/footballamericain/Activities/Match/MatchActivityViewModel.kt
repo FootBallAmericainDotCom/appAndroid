@@ -17,8 +17,4 @@ class MatchActivityViewModel(application: Application) : AndroidViewModel(applic
 
     val scoreOne = ObservableField<String>()
     val scoreTwo = ObservableField<String>()
-
-    val matchScoreOne = ObservableField<ArrayList<String>>()
-    val matchScoreTwo = ObservableField<ArrayList<String>>()
-
 }

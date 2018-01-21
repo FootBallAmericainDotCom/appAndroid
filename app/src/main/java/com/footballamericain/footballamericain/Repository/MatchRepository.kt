@@ -1,6 +1,10 @@
 package com.footballamericain.footballamericain.Repository
 
+import android.widget.LinearLayout
 import com.footballamericain.footballamericain.Activities.Match.MatchActivityViewModel
+import com.footballamericain.footballamericain.Custom.ScoreView.ScoreView
+import com.footballamericain.footballamericain.Custom.ScoreView.ScoreViewViewModel
+import com.footballamericain.footballamericain.R
 import com.footballamericain.footballamericain.dummy.MatchDummyContent
 import com.footballamericain.footballamericain.dummy.TeamDummyContent
 
@@ -10,7 +14,8 @@ import com.footballamericain.footballamericain.dummy.TeamDummyContent
 class MatchRepository {
 
     companion object {
-        fun getMatchById(id: Int, model: MatchActivityViewModel) {
+        fun getMatchById(id: Int, model: MatchActivityViewModel, scoreLayout: LinearLayout) {
+            val context = scoreLayout.context
 
             val teamOne = TeamDummyContent.selectTeam()
             model.teamOne.set(teamOne.name)
@@ -32,8 +37,18 @@ class MatchRepository {
 
             model.scoreTwo.set(scoreTwo.toString())
 
-            model.matchScoreOne.set(matchScoreOne)
-            model.matchScoreTwo.set(matchScoreTwo)
+            matchScoreOne.forEachIndexed { index: Int, score: String ->
+                val viewModel = ScoreViewViewModel(
+                        context.getString(R.string.quart_time_nbr, index + 1),
+                        score,
+                        matchScoreTwo[index]
+                )
+
+                val scoreView = ScoreView(context)
+                scoreView.viewModel = viewModel
+
+                scoreLayout.addView(scoreView)
+            }
         }
 
         fun getMatches(): List<MatchDummyContent.Match> {

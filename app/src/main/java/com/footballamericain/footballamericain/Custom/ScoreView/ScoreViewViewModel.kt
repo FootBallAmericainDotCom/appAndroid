@@ -5,9 +5,9 @@ import android.databinding.ObservableField
 /**
  * Created by Jc on 21/12/2017.
  */
-class ScoreViewViewModel {
+class ScoreViewViewModel(title : String, scoreOne : String, scoreTwo: String) {
 
-    val title = ObservableField<String>()
-    val scoreOne = ObservableField<String>()
-    val scoreTwo = ObservableField<String>()
+    val title = ObservableField<String>(title)
+    val scoreOne = ObservableField<String>(scoreOne)
+    val scoreTwo = ObservableField<String>(scoreTwo)
 }
