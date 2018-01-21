@@ -10,74 +10,43 @@
             type="com.footballamericain.footballamericain.Custom.ScoreView.ScoreViewViewModel" />
     </data>
 
-    <android.support.v7.widget.CardView
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <android.support.constraint.ConstraintLayout
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <TextView
+            android:id="@+id/time"
+            style="@style/Title.QuartTime"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.title}"
+            tools:text="Quart Time 1" />
 
-            <android.support.constraint.Guideline
-                android:id="@+id/guideline"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.5" />
+        <TextView
+            style="@style/Score.Match.GravityEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.scoreOne}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/guideline"
+            app:layout_constraintTop_toBottomOf="@id/time"
+            tools:text="3" />
 
-            <TextView
-                android:id="@+id/time"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:padding="3dp"
-                android:background="@color/colorPrimary"
-                android:textColor="@android:color/white"
-                android:textStyle="bold"
-                android:text="@{viewModel.title}"
-                android:textSize="15sp"
-                tools:text="Quart Time 1" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="@color/colorAccent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/time" />
-
-            <View
-                android:layout_width="2dp"
-                android:layout_height="0dp"
-                android:layout_margin="5dp"
-                android:background="@color/colorAccent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/time" />
-
-            <TextView
-                style="@style/Score.Table"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin_from_center"
-                android:text="@{viewModel.scoreOne}"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/guideline"
-                app:layout_constraintTop_toBottomOf="@id/time"
-                tools:text="3" />
-
-            <TextView
-                style="@style/Score.Table"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin_from_center"
-                android:text="@{viewModel.scoreTwo}"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/guideline"
-                app:layout_constraintTop_toBottomOf="@id/time"
-                tools:text="7" />
-
-        </android.support.constraint.ConstraintLayout>
-    </android.support.v7.widget.CardView>
+        <TextView
+            style="@style/Score.Match.GravityStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.scoreTwo}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guideline"
+            app:layout_constraintTop_toBottomOf="@id/time"
+            tools:text="7" />
+    </android.support.constraint.ConstraintLayout>
 </layout>
