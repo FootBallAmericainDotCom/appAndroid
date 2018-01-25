@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.footballamericain.footballamericain.ViewHolder.Player.PlayerVHModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        bindingBackground="@{model.backgroundColor}"
+        android:minHeight="35dp"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/Roaster"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@{model.number}"
+            tools:text="12" />
+
+        <TextView
+            style="@style/Roaster"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:gravity="center_vertical"
+            android:text="@{model.name}"
+            tools:text="Tom Brady" />
+
+        <TextView
+            style="@style/Roaster"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@{model.position}"
+            tools:text="QB" />
+    </LinearLayout>
+</layout>

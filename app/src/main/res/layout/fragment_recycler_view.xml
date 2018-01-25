@@ -11,6 +11,5 @@
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         app:layoutManager="LinearLayoutManager"
-        tools:context="com.footballamericain.footballamericain.Fragments.ArticlesFragment"
         tools:listitem="@layout/view_holder_article" />
 </layout>

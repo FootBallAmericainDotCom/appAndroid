@@ -42,8 +42,8 @@ class RankingFragment : Fragment() {
     private fun getAdapter(): PagerFragmentAdapter {
         val adapter = PagerFragmentAdapter(childFragmentManager)
 
-        adapter.addFragment(ConferenceRankingFragment(), getString(R.string.title_news), R.drawable.ic_american_football_conference)
-        adapter.addFragment(ConferenceRankingFragment(), getString(R.string.title_ranking), R.drawable.ic_national_football_conference)
+        adapter.addFragment(ConferenceRankingFragment(), getString(R.string.title_afc), R.drawable.ic_american_football_conference)
+        adapter.addFragment(ConferenceRankingFragment(), getString(R.string.title_nfc), R.drawable.ic_national_football_conference)
 
         return adapter
     }

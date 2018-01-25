@@ -125,4 +125,6 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="action_settings">Settings</string>
+    <string name="title_afc">AFC</string>
+    <string name="title_nfc">NFC</string>
 </resources>
