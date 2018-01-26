@@ -5,17 +5,22 @@ import android.databinding.ObservableField
 import com.footballamericain.footballamericain.Custom.Board.Row.RowView
 import com.footballamericain.footballamericain.Custom.Board.Row.RowViewModel
 import com.footballamericain.footballamericain.Custom.Board.Table.TableView
+import com.footballamericain.footballamericain.Fragments.ConferenceRanking.ConferenceRankingFragment.CONFERENCE.*
 import com.footballamericain.footballamericain.R
 import com.footballamericain.footballamericain.Repository.RankingRepository
 
 /**
  * Created by Jc on 07/01/2018.
  */
-class ConferenceRankingViewModel(val context: Context) {
+class ConferenceRankingViewModel(val context: Context,
+                                 conference : ConferenceRankingFragment.CONFERENCE) {
     val ordinate = ObservableField<List<String>>()
 
     init {
-        ordinate.set(context.resources.getStringArray(R.array.AFC).toList())
+        when (conference) {
+            AFC -> ordinate.set(context.resources.getStringArray(R.array.AFC).toList())
+            NFC -> ordinate.set(context.resources.getStringArray(R.array.NFC).toList())
+        }
     }
 
     fun setRow(table: TableView) {

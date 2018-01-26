@@ -16,16 +16,22 @@ import com.footballamericain.footballamericain.databinding.FragmentConferenceRan
  */
 class ConferenceRankingFragment : Fragment() {
 
-    private var mParam1: String? = null
+    enum class CONFERENCE {
+        AFC, NFC
+    }
+
     private lateinit var viewModel: ConferenceRankingViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        viewModel = ConferenceRankingViewModel(context)
-
         if (arguments != null) {
-            mParam1 = arguments.getString(ARG_PARAM1)
+            viewModel = when (CONFERENCE.valueOf(arguments.getString(ARG_CONFERENCE))) {
+                CONFERENCE.AFC -> ConferenceRankingViewModel(context, CONFERENCE.AFC)
+                CONFERENCE.NFC -> ConferenceRankingViewModel(context, CONFERENCE.NFC)
+            }
+        } else {
+            throw RuntimeException("A Conference must be set, use NewInstance function")
         }
     }
 
@@ -43,12 +49,12 @@ class ConferenceRankingFragment : Fragment() {
     }
 
     companion object {
-        private val ARG_PARAM1 = "param1"
+        private const val ARG_CONFERENCE = "conference"
 
-        fun newInstance(param1: String): ConferenceRankingFragment {
+        fun newInstance(conference: CONFERENCE): ConferenceRankingFragment {
             val fragment = ConferenceRankingFragment()
             val args = Bundle()
-            args.putString(ARG_PARAM1, param1)
+            args.putString(ARG_CONFERENCE, conference.name)
             fragment.arguments = args
             return fragment
         }
