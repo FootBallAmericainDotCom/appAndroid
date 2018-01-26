@@ -6,17 +6,17 @@ import android.view.ViewGroup
 import com.afollestad.sectionedrecyclerview.SectionedRecyclerViewAdapter
 import com.afollestad.sectionedrecyclerview.SectionedViewHolder
 import com.footballamericain.footballamericain.R
-import com.footballamericain.footballamericain.ViewHolder.Match.MatchViewHolder
 import com.footballamericain.footballamericain.ViewHolder.Header.HeaderViewHolder
-import com.footballamericain.footballamericain.databinding.ViewHolderMatchFullBinding
+import com.footballamericain.footballamericain.ViewHolder.Player.PlayerViewHolder
 import com.footballamericain.footballamericain.databinding.ViewHolderMatchHeaderBinding
-import com.footballamericain.footballamericain.dummy.MatchDummyContent
+import com.footballamericain.footballamericain.databinding.ViewHolderPlayerBinding
+import com.footballamericain.footballamericain.dummy.PlayerDummyContent
 
 /**
- * Created by Jc on 30/12/2017.
+ * Created by Jc on 25/01/2018.
  */
-class MatchExpandableAdapter(private val context: Context,
-                             private val sectionList: ArrayList<ArrayList<MatchDummyContent.Match>>)
+class DepthChartExpandableAdapter(private val context: Context,
+                                  private val sectionList: ArrayList<ArrayList<PlayerDummyContent.Player>>)
     : SectionedRecyclerViewAdapter<SectionedViewHolder>() {
 
     private var mLayoutInflater: LayoutInflater? = null
@@ -29,29 +29,22 @@ class MatchExpandableAdapter(private val context: Context,
         return sectionList[section].size
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SectionedViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): SectionedViewHolder {
         if (mLayoutInflater == null) {
-            mLayoutInflater = LayoutInflater.from(parent.context)
+            mLayoutInflater = LayoutInflater.from(parent?.context)
         }
 
         return when (viewType) {
-            VIEW_TYPE_ITEM -> MatchViewHolder(ViewHolderMatchFullBinding.inflate(
+            VIEW_TYPE_ITEM -> PlayerViewHolder(ViewHolderPlayerBinding.inflate(
                     mLayoutInflater, parent, false))
 
             VIEW_TYPE_HEADER -> HeaderViewHolder(ViewHolderMatchHeaderBinding.inflate(
                     mLayoutInflater, parent, false))
 
             else -> {
-                MatchViewHolder(ViewHolderMatchFullBinding.inflate(
+                PlayerViewHolder(ViewHolderPlayerBinding.inflate(
                         mLayoutInflater, parent, false))
             }
-        }
-    }
-
-    override fun onBindViewHolder(holder: SectionedViewHolder?, section: Int, relativePosition: Int, absolutePosition: Int) {
-        if (holder is MatchViewHolder) {
-            val match = sectionList[section][relativePosition]
-            holder.bind(match.teamOne, match.scoreOne, match.teamTwo, match.scoreTwo)
         }
     }
 
@@ -62,6 +55,12 @@ class MatchExpandableAdapter(private val context: Context,
                     this::toggleSectionExpanded,
                     this::isSectionExpanded
             )
+        }
+    }
+
+    override fun onBindViewHolder(holder: SectionedViewHolder?, section: Int, relativePosition: Int, absolutePosition: Int) {
+        if (holder is PlayerViewHolder) {
+            holder.bind(relativePosition, sectionList[section][relativePosition].name       )                       
         }
     }
 

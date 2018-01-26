@@ -1,11 +1,11 @@
-package com.footballamericain.footballamericain.ViewHolder.MatchHeader
+package com.footballamericain.footballamericain.ViewHolder.Header
 
 import android.databinding.ObservableField
 
 /**
  * Created by Jc on 30/12/2017.
  */
-class MatchHeaderViewModel {
+class HeaderViewModel {
 
     val title = ObservableField<String>()
     val expanded = ObservableField<Boolean>()

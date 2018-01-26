@@ -1,16 +1,15 @@
-package com.footballamericain.footballamericain.ViewHolder.MatchHeader
+package com.footballamericain.footballamericain.ViewHolder.Header
 
-import android.view.View
 import com.afollestad.sectionedrecyclerview.SectionedViewHolder
 import com.footballamericain.footballamericain.databinding.ViewHolderMatchHeaderBinding
 
 /**
  * Created by Jc on 30/12/2017.
  */
-class MatchHeaderViewHolder(val binding: ViewHolderMatchHeaderBinding)
+class HeaderViewHolder(val binding: ViewHolderMatchHeaderBinding)
     : SectionedViewHolder(binding.root) {
 
-    val model = MatchHeaderViewModel()
+    val model = HeaderViewModel()
 
     init {
         binding.viewModel = model

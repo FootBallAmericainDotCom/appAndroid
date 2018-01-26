@@ -1,5 +1,7 @@
 package com.footballamericain.footballamericain.dummy
 
+import java.util.*
+
 /**
  * Created by Jc on 21/01/2018.
  */
@@ -22,5 +24,25 @@ object PlayerDummyContent {
         PLAYERS.add(Player(9, "68", "Waddle LaAdrian", "OT"))
         PLAYERS.add(Player(10, "19", "Mitchell Malcolm", "WR"))
         PLAYERS.add(Player(11, "47", "Hollister Jacob", "TE"))
+    }
+
+    private fun getDepthChartSection(): ArrayList<PlayerDummyContent.Player> {
+        val list = ArrayList<PlayerDummyContent.Player>()
+
+        repeat(3) {
+            list.add(PLAYERS[Random().nextInt(PLAYERS.size)])
+        }
+
+        return list
+    }
+
+    fun getDepthChart(): ArrayList<ArrayList<PlayerDummyContent.Player>> {
+        val list = ArrayList<ArrayList<PlayerDummyContent.Player>>()
+
+        repeat(5) {
+            list.add(getDepthChartSection())
+        }
+
+        return list
     }
 }

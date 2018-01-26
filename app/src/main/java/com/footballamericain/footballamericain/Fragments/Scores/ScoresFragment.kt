@@ -18,13 +18,11 @@ import com.footballamericain.footballamericain.dummy.MatchDummyContent
  */
 class ScoresFragment : Fragment() {
 
-    private val adapter = MatchExpandableAdapter(MatchRepository.getCalendar())
-
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val binding = FragmentScoresBinding.inflate(inflater, container, false)
 
-        binding.recyclerView.adapter = adapter
+        binding.recyclerView.adapter = MatchExpandableAdapter(context, MatchRepository.getCalendar())
 
         return binding.root
     }

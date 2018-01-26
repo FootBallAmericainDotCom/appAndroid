@@ -4,8 +4,9 @@ import android.graphics.Color
 import android.os.Build
 import android.view.WindowManager
 import com.footballamericain.footballamericain.Activities.Team.TeamActivityViewModel
+import com.footballamericain.footballamericain.dummy.PlayerDummyContent
 import com.footballamericain.footballamericain.dummy.TeamDummyContent
-import java.util.ArrayList
+import java.util.*
 
 /**
  * Created by Jc on 14/01/2018.
@@ -16,7 +17,7 @@ class TeamsRepository {
             return TeamDummyContent.TEAMS
         }
 
-        fun getTeamById(id : Int, model : TeamActivityViewModel){
+        fun getTeamById(id: Int, model: TeamActivityViewModel) {
             val team = TeamDummyContent.TEAMS[id]
 
             model.logo.set(team.logo)
@@ -31,8 +32,12 @@ class TeamsRepository {
 
         }
 
-        fun getTeamById(id: Int) : TeamDummyContent.Team {
+        fun getTeamById(id: Int): TeamDummyContent.Team {
             return TeamDummyContent.TEAMS[id]
+        }
+
+        fun getDepthChart(): ArrayList<ArrayList<PlayerDummyContent.Player>> {
+            return PlayerDummyContent.getDepthChart()
         }
     }
 }
