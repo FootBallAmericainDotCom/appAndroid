@@ -1,13 +1,16 @@
 package com.footballamericain.footballamericain.Adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import com.afollestad.sectionedrecyclerview.SectionedRecyclerViewAdapter
 import com.afollestad.sectionedrecyclerview.SectionedViewHolder
+import com.footballamericain.footballamericain.Activities.Match.MatchActivity
 import com.footballamericain.footballamericain.R
-import com.footballamericain.footballamericain.ViewHolder.Match.MatchViewHolder
 import com.footballamericain.footballamericain.ViewHolder.Header.HeaderViewHolder
+import com.footballamericain.footballamericain.ViewHolder.Match.MatchViewHolder
 import com.footballamericain.footballamericain.databinding.ViewHolderMatchFullBinding
 import com.footballamericain.footballamericain.databinding.ViewHolderMatchHeaderBinding
 import com.footballamericain.footballamericain.dummy.MatchDummyContent
@@ -51,7 +54,9 @@ class MatchExpandableAdapter(private val context: Context,
     override fun onBindViewHolder(holder: SectionedViewHolder?, section: Int, relativePosition: Int, absolutePosition: Int) {
         if (holder is MatchViewHolder) {
             val match = sectionList[section][relativePosition]
-            holder.bind(match.teamOne, match.scoreOne, match.teamTwo, match.scoreTwo)
+            holder.bind(match, View.OnClickListener {
+                context.startActivity(Intent(context, MatchActivity::class.java))
+            })
         }
     }
 
