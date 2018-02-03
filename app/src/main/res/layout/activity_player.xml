@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.footballamericain.footballamericain.Activities.Player.PlayerViewModel"/>
+    </data>
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.footballamericain.footballamericain.Activities.Player.PlayerActivity">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/app_bar_height"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <android.support.design.widget.CollapsingToolbarLayout
+                android:id="@+id/toolbar_layout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/app_bar_height"
+                android:background="@color/colorPrimary"
+                app:contentScrim="@color/colorPrimary"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/app_bar_height"
+                    android:layout_gravity="top"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        pictureURL="@{viewModel.picture}"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/app_bar_height"
+                        android:layout_weight="1"
+                        android:scaleType="fitCenter"
+                        tools:src="@mipmap/ic_launcher" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@{viewModel.name}"
+                            android:textColor="@android:color/white"
+                            android:textSize="17sp"
+                            android:textStyle="bold"
+                            tools:text="Tom Brady" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@{viewModel.team}"
+                            android:textColor="@android:color/white"
+                            android:textStyle="bold"
+                            tools:text="New England Patriot" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@{viewModel.info}"
+                            android:textColor="@android:color/white"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            tools:text="#12 | QB | 1,93m | 102kg" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@{viewModel.birthday}"
+                            android:textColor="@android:color/white"
+                            android:textSize="12sp"
+                            tools:text="03/08/1977 (40 ans)" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@{viewModel.college}"
+                            android:textColor="@android:color/white"
+                            android:textSize="12sp"
+                            tools:text="College:\nMichigan" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@{viewModel.draft}"
+                            android:textColor="@android:color/white"
+                            android:textSize="12sp"
+                            tools:text="Draft: \n2000 - n°199 (tour 6) par NE" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@{viewModel.experience}"
+                            android:textColor="@android:color/white"
+                            android:textSize="12sp"
+                            tools:text="Expérience: \n18ème saison" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </android.support.design.widget.CollapsingToolbarLayout>
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <android.support.design.widget.TabLayout
+                    android:id="@+id/tab_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:background="@color/colorPrimary"
+                    app:tabIndicatorColor="@color/colorAccent"
+                    app:tabSelectedTextColor="@color/colorAccent"
+                    app:tabTextColor="@android:color/white" />
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/viewpager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+    </android.support.design.widget.CoordinatorLayout>
+</layout>

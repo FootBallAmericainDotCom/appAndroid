@@ -20,11 +20,6 @@ import com.footballamericain.footballamericain.databinding.FragmentRankingBindin
  */
 class RankingFragment : Fragment() {
 
-    // TODO: Rename and change types of parameters
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val binding = FragmentRankingBinding.inflate(inflater, container, false)

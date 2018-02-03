@@ -1,6 +1,9 @@
 package com.footballamericain.footballamericain.ViewHolder.Player
 
+import android.content.Intent
 import com.afollestad.sectionedrecyclerview.SectionedViewHolder
+import com.footballamericain.footballamericain.Activities.Player.PlayerActivity
+import com.footballamericain.footballamericain.Activities.Team.TeamActivity
 import com.footballamericain.footballamericain.R
 import com.footballamericain.footballamericain.databinding.ViewHolderPlayerBinding
 import com.footballamericain.footballamericain.dummy.PlayerDummyContent
@@ -8,7 +11,7 @@ import com.footballamericain.footballamericain.dummy.PlayerDummyContent
 /**
  * Created by Jc on 21/01/2018.
  */
-class PlayerViewHolder(binding: ViewHolderPlayerBinding) : SectionedViewHolder(binding.root) {
+class PlayerViewHolder(val binding: ViewHolderPlayerBinding) : SectionedViewHolder(binding.root) {
 
     val model = PlayerVHModel()
 
@@ -26,6 +29,10 @@ class PlayerViewHolder(binding: ViewHolderPlayerBinding) : SectionedViewHolder(b
                     else -> R.color.gray73
                 }
         )
+
+        binding.root.setOnClickListener {
+            changeActivity(player.id)
+        }
     }
 
     fun bind(index: Int, playerName: String) {
@@ -37,5 +44,13 @@ class PlayerViewHolder(binding: ViewHolderPlayerBinding) : SectionedViewHolder(b
                     else -> R.color.gray73
                 }
         )
+    }
+
+    private fun changeActivity(id : Int) {
+        val context = binding.root.context.applicationContext
+        val intent = Intent(context, PlayerActivity::class.java)
+        intent.putExtra(PlayerActivity.PLAYER_ID, id)
+
+        context.startActivity(intent)
     }
 }

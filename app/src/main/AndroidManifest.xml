@@ -27,5 +27,7 @@
         <activity android:name=".Activities.ArticleActivity" />
         <activity android:name=".Activities.Match.MatchActivity" />
         <activity android:name=".Activities.Team.TeamActivity" />
+        <activity android:name=".Activities.Player.PlayerActivity"/>
     </application>
+
 </manifest>
