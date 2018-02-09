@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:diagonal="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="viewModel"
-            type="com.footballamericain.footballamericain.Activities.Player.PlayerViewModel"/>
+            type="com.footballamericain.footballamericain.Activities.Player.PlayerViewModel" />
     </data>
+
     <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -23,90 +26,124 @@
                 android:id="@+id/toolbar_layout"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/app_bar_height"
-                android:background="@color/colorPrimary"
-                app:contentScrim="@color/colorPrimary"
+                android:background="@{viewModel.colorPrimary}"
+                app:contentScrim="@{viewModel.colorPrimary}"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
-                <LinearLayout
+                <android.support.constraint.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/app_bar_height"
-                    android:layout_gravity="top"
-                    android:orientation="horizontal">
+                    android:layout_gravity="top">
+
+                    <com.github.florent37.diagonallayout.DiagonalLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="-70dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        diagonal:diagonal_angle="35"
+                        diagonal:diagonal_direction="left"
+                        diagonal:diagonal_position="bottom">
+
+                        <View
+                            android:background="@{viewModel.colorSecondary}"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+                    </com.github.florent37.diagonallayout.DiagonalLayout>
+
 
                     <ImageView
-                        pictureURL="@{viewModel.picture}"
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/app_bar_height"
-                        android:layout_weight="1"
-                        android:scaleType="fitCenter"
+                        android:id="@+id/picture"
+                        circlePictureURL="@{viewModel.picture}"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/shape_circle"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
                         tools:src="@mipmap/ic_launcher" />
 
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/picture"
+                        app:layout_constraintTop_toTopOf="@id/picture">
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/nexa_bold"
+                            android:gravity="center"
                             android:text="@{viewModel.name}"
                             android:textColor="@android:color/white"
-                            android:textSize="17sp"
+                            android:textSize="25sp"
                             android:textStyle="bold"
+                            app:layout_constraintBottom_toTopOf="@id/team_name"
                             tools:text="Tom Brady" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/nexa_bold"
+                            android:gravity="center"
                             android:text="@{viewModel.team}"
                             android:textColor="@android:color/white"
+                            android:textSize="18sp"
                             android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="@id/picture"
                             tools:text="New England Patriot" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:gravity="center"
                             android:text="@{viewModel.info}"
                             android:textColor="@android:color/white"
-                            android:textSize="12sp"
+                            android:textSize="13sp"
                             android:textStyle="bold"
                             tools:text="#12 | QB | 1,93m | 102kg" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:gravity="center"
                             android:text="@{viewModel.birthday}"
                             android:textColor="@android:color/white"
-                            android:textSize="12sp"
+                            android:textSize="13sp"
                             tools:text="03/08/1977 (40 ans)" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:gravity="center"
                             android:text="@{viewModel.college}"
                             android:textColor="@android:color/white"
-                            android:textSize="12sp"
-                            tools:text="College:\nMichigan" />
+                            android:textSize="13sp"
+                            tools:text="College: Michigan" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:gravity="center"
                             android:text="@{viewModel.draft}"
                             android:textColor="@android:color/white"
                             android:textSize="12sp"
-                            tools:text="Draft: \n2000 - n°199 (tour 6) par NE" />
+                            tools:text="Draft: 2000 - n°199 (tour 6) par NE" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:gravity="center"
                             android:text="@{viewModel.experience}"
                             android:textColor="@android:color/white"
                             android:textSize="12sp"
-                            tools:text="Expérience: \n18ème saison" />
+                            tools:text="Expérience: 18ème saison" />
                     </LinearLayout>
 
-                </LinearLayout>
+                </android.support.constraint.ConstraintLayout>
+
             </android.support.design.widget.CollapsingToolbarLayout>
         </android.support.design.widget.AppBarLayout>
 
@@ -126,9 +163,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom"
-                    android:background="@color/colorPrimary"
-                    app:tabIndicatorColor="@color/colorAccent"
-                    app:tabSelectedTextColor="@color/colorAccent"
+                    android:background="@{viewModel.colorPrimary}"
+                    app:tabIndicatorColor="@{viewModel.colorSecondary}"
+                    app:tabSelectedTextColor="@{viewModel.colorSecondary}"
                     app:tabTextColor="@android:color/white" />
 
                 <android.support.v4.view.ViewPager

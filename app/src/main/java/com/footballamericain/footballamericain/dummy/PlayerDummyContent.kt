@@ -16,16 +16,16 @@ object PlayerDummyContent {
     init {
         PLAYERS.add(Player(0, "6", "Allen Ryan", "P",
                 "http://www.footballamericain.com/img_joueur/300/BRADYTOM19770803/tom-brady.png",
-                "1,93", "102", TeamDummyContent.TEAMS[4]))
+                "1,93", "102", TeamDummyContent.TEAMS[0]))
         PLAYERS.add(Player(1, "83", "Allen Dwayne", "TE",
                 "http://www.footballamericain.com/img_joueur/300/BRADYTOM19770803/tom-brady.png",
-                "1,93", "102", TeamDummyContent.TEAMS[4]))
+                "1,93", "102", TeamDummyContent.TEAMS[1]))
         PLAYERS.add(Player(2, "80", "Amendola Danny", "WR",
                 "http://www.footballamericain.com/img_joueur/300/BRADYTOM19770803/tom-brady.png",
-                "1,93", "102", TeamDummyContent.TEAMS[4]))
+                "1,93", "102", TeamDummyContent.TEAMS[2]))
         PLAYERS.add(Player(3, "60", "Andrews David", "C",
                 "http://www.footballamericain.com/img_joueur/300/BRADYTOM19770803/tom-brady.png",
-                "1,93", "102", TeamDummyContent.TEAMS[4]))
+                "1,93", "102", TeamDummyContent.TEAMS[3]))
         PLAYERS.add(Player(4, "29", "Bademosi Johnson", "WR",
                 "http://www.footballamericain.com/img_joueur/300/BRADYTOM19770803/tom-brady.png",
                 "1,93", "102", TeamDummyContent.TEAMS[4]))
