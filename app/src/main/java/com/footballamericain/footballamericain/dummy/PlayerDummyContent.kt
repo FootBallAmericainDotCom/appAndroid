@@ -1,6 +1,7 @@
 package com.footballamericain.footballamericain.dummy
 
 import java.util.*
+import kotlin.collections.ArrayList
 
 /**
  * Created by Jc on 21/01/2018.
@@ -9,7 +10,7 @@ object PlayerDummyContent {
 
     class Player(val id: Int, val number: String, val name: String, val position: String,
                  val picture : String, val height: String, val weight : String,
-                 val team : TeamDummyContent.Team)
+                 val team : TeamDummyContent.Team, var stat : ArrayList<YearStatDummyContent.YearStat>? = null)
 
     val PLAYERS = ArrayList<Player>()
 
