@@ -19,7 +19,7 @@ import com.footballamericain.footballamericain.Repository.TeamsRepository
 class AllTeamsFragment : Fragment() {
 
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val binding = FragmentRecyclerViewBinding.inflate(inflater, container, false)
         binding.recyclerView.adapter = TeamsAdapter(TeamsRepository.getTeams())

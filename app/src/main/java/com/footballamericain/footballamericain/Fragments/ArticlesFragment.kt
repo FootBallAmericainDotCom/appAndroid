@@ -16,12 +16,13 @@ class ArticlesFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        if (arguments != null) {
-            id = arguments.getString(ID)
+        arguments?.apply {
+            id = getString(ID)
+
         }
     }
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val binding = FragmentRecyclerViewBinding.inflate(inflater, container, false)
 

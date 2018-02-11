@@ -25,17 +25,19 @@ class ConferenceRankingFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        if (arguments != null) {
-            viewModel = when (CONFERENCE.valueOf(arguments.getString(ARG_CONFERENCE))) {
-                CONFERENCE.AFC -> ConferenceRankingViewModel(context, CONFERENCE.AFC)
-                CONFERENCE.NFC -> ConferenceRankingViewModel(context, CONFERENCE.NFC)
+        arguments?.apply {
+            context?.let {
+                viewModel = when (CONFERENCE.valueOf(getString(ARG_CONFERENCE))) {
+                    CONFERENCE.AFC -> ConferenceRankingViewModel(it, CONFERENCE.AFC)
+                    CONFERENCE.NFC -> ConferenceRankingViewModel(it, CONFERENCE.NFC)
+                }
+
             }
-        } else {
-            throw RuntimeException("A Conference must be set, use NewInstance function")
+         //   throw RuntimeException("A Conference must be set, use NewInstance function")
         }
     }
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val binding = FragmentConferenceRankingBinding.inflate(inflater, container, false)
         binding.viewModel = viewModel

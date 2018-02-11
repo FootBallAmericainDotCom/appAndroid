@@ -22,12 +22,13 @@ class RoasterFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        if (arguments != null) {
-            teamID = arguments.getInt(ARG_TEAM_ID)
+
+        arguments?.apply {
+            teamID = getInt(ARG_TEAM_ID)
         }
     }
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val binding = FragmentRecyclerViewBinding.inflate(inflater, container, false)
         binding.recyclerView.adapter = PlayerAdapter(PlayerRepository.getPlayerList(5))

@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.footballamericain.footballamericain.Adapter.DepthChartExpandableAdapter
-import com.footballamericain.footballamericain.Repository.PlayerRepository
 import com.footballamericain.footballamericain.Repository.TeamsRepository
 import com.footballamericain.footballamericain.databinding.FragmentRecyclerViewBinding
 
@@ -23,15 +22,17 @@ class DepthChartFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        if (arguments != null) {
-            teamID = arguments.getInt(ARG_TEAM_ID)
+        arguments?.apply {
+            teamID = getInt(ARG_TEAM_ID)
         }
     }
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val binding = FragmentRecyclerViewBinding.inflate(inflater, container, false)
-        binding.recyclerView.adapter = DepthChartExpandableAdapter(context, TeamsRepository.getDepthChart())
+        binding.recyclerView.adapter = context?.let {
+            DepthChartExpandableAdapter(it, TeamsRepository.getDepthChart())
+        }
 
         return binding.root
     }

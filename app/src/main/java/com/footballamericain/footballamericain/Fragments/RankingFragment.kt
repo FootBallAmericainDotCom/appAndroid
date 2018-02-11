@@ -20,7 +20,7 @@ import com.footballamericain.footballamericain.databinding.FragmentRankingBindin
  */
 class RankingFragment : Fragment() {
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val binding = FragmentRankingBinding.inflate(inflater, container, false)
 
