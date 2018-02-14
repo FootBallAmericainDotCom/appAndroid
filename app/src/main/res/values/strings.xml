@@ -37,4 +37,15 @@
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="no_stats_player">No stats for this player</string>
+    <string name="passe">Passe</string>
+    <string name="comp">Comp</string>
+    <string name="tent">Tent</string>
+    <string name="yds">Yds</string>
+    <string name="percentage_comp">%Comp</string>
+    <string name="moy">Moy</string>
+    <string name="lng">Lng</string>
+    <string name="td">Td</string>
+    <string name="inter">Int</string>
+    <string name="rat">Rat</string>
+    <string name="run">Run</string>
 </resources>
