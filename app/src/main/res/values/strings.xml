@@ -48,4 +48,5 @@
     <string name="inter">Int</string>
     <string name="rat">Rat</string>
     <string name="run">Run</string>
+    <string name="nb">Nb</string>
 </resources>

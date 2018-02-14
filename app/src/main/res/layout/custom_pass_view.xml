@@ -2,6 +2,13 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.footballamericain.footballamericain.Custom.statistic.passe.PasseViewModel" />
+    </data>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -50,7 +57,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text=""
+                android:text="@{viewModel.completedPasse}"
                 tools:text="16" />
 
             <TextView
@@ -58,7 +65,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text=""
+                android:text="@{viewModel.triedPasse}"
                 tools:text="36" />
 
             <TextView
@@ -66,7 +73,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text=""
+                android:text="@{viewModel.yardGain}"
                 tools:text="267" />
         </LinearLayout>
 
@@ -108,7 +115,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text=""
+                android:text="@{viewModel.percentageCompleted}"
                 tools:text="44,4%" />
 
             <TextView
@@ -116,7 +123,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text=""
+                android:text="@{viewModel.averageLength}"
                 tools:text="16" />
 
             <TextView
@@ -124,9 +131,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text=""
+                android:text="@{viewModel.longestPasse}"
                 tools:text="36" />
-
         </LinearLayout>
 
         <LinearLayout
@@ -150,9 +156,9 @@
 
             <TextView
                 style="@style/Statistic.Header"
-                android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="@string/rat" />
         </LinearLayout>
 
@@ -166,7 +172,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text=""
+                android:text="@{viewModel.touchDown}"
                 tools:text="16" />
 
             <TextView
@@ -174,7 +180,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text=""
+                android:text="@{viewModel.interception}"
                 tools:text="36" />
 
             <TextView
@@ -182,7 +188,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text=""
+                android:text="@{viewModel.qbRating}"
                 tools:text="267" />
         </LinearLayout>
     </LinearLayout>

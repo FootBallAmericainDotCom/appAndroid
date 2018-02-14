@@ -11,7 +11,7 @@ class PasseViewModel {
     val yardGain = ObservableField<String>()
 
     val percentageCompleted = ObservableField<String>()
-    val averageLenth = ObservableField<String>()
+    val averageLength = ObservableField<String>()
     val longestPasse = ObservableField<String>()
 
     val touchDown = ObservableField<String>()
