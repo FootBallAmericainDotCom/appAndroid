@@ -1,4 +1,4 @@
-package com.footballamericain.footballamericain.ViewHolder.Match
+package com.footballamericain.footballamericain.Custom.match
 
 import android.databinding.BaseObservable
 import android.databinding.ObservableField

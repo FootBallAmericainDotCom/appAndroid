@@ -2,6 +2,7 @@ package com.footballamericain.footballamericain.ViewHolder.Match
 
 import android.view.View
 import com.afollestad.sectionedrecyclerview.SectionedViewHolder
+import com.footballamericain.footballamericain.Custom.match.MatchViewModel
 import com.footballamericain.footballamericain.databinding.ViewHolderMatchBinding
 import com.footballamericain.footballamericain.databinding.ViewHolderMatchFullBinding
 import com.footballamericain.footballamericain.dummy.MatchDummyContent
