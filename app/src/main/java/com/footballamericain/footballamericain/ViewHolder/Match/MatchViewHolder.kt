@@ -1,9 +1,7 @@
 package com.footballamericain.footballamericain.ViewHolder.Match
 
-import android.content.Intent
 import android.view.View
 import com.afollestad.sectionedrecyclerview.SectionedViewHolder
-import com.footballamericain.footballamericain.Activities.Match.MatchActivity
 import com.footballamericain.footballamericain.databinding.ViewHolderMatchBinding
 import com.footballamericain.footballamericain.databinding.ViewHolderMatchFullBinding
 import com.footballamericain.footballamericain.dummy.MatchDummyContent
@@ -16,7 +14,7 @@ class MatchViewHolder(val binding: Any, val root: View) : SectionedViewHolder(ro
     constructor(binding: ViewHolderMatchBinding) : this(binding, binding.root)
     constructor(binding: ViewHolderMatchFullBinding) : this(binding, binding.root)
 
-    val model: MatchVHModel = MatchVHModel()
+    val model: MatchViewModel = MatchViewModel()
 
     init {
         when (binding) {

@@ -7,7 +7,7 @@
 
         <variable
             name="model"
-            type="com.footballamericain.footballamericain.ViewHolder.Match.MatchVHModel" />
+            type="com.footballamericain.footballamericain.ViewHolder.Match.MatchViewModel" />
     </data>
 
     <android.support.constraint.ConstraintLayout
