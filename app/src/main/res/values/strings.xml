@@ -51,4 +51,7 @@
     <string name="nb">Nb</string>
     <string name="reception">Reception</string>
     <string name="rec">Rec</string>
+    <string name="fumble">Fumble</string>
+    <string name="fum">Fum</string>
+    <string name="fperd">F.Perd</string>
 </resources>
