@@ -49,4 +49,6 @@
     <string name="rat">Rat</string>
     <string name="run">Run</string>
     <string name="nb">Nb</string>
+    <string name="reception">Reception</string>
+    <string name="rec">Rec</string>
 </resources>
