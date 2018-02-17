@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.footballamericain.footballamericain.ViewHolder.statistic.StatisticViewHolder
 import com.footballamericain.footballamericain.databinding.ViewHolderStatisticBinding
+import com.footballamericain.footballamericain.dummy.MatchDummyContent
 
 /**
  * Created by Jc on 17/02/2018.
@@ -24,6 +25,6 @@ class PlayerStatsAdapter : RecyclerView.Adapter<StatisticViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: StatisticViewHolder?, position: Int) {
-        holder?.bind()
+        holder?.bind(MatchDummyContent.MATCHS[1])
     }
 }

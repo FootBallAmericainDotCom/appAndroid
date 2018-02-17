@@ -15,6 +15,8 @@ import com.footballamericain.footballamericain.R
 import com.squareup.picasso.Picasso
 import android.graphics.drawable.Drawable
 import android.util.Log
+import com.footballamericain.footballamericain.Custom.match.MatchView
+import com.footballamericain.footballamericain.Custom.match.MatchViewModel
 
 
 /**
@@ -128,6 +130,12 @@ class BindingAdapter {
                         toolbar.context, R.color.colorPrimary
                 ))
             }
+        }
+
+        @JvmStatic
+        @BindingAdapter("viewModel")
+        fun setBindViewModel(matchView : MatchView, viewModel : MatchViewModel) {
+            matchView.viewModel = viewModel
         }
     }
 }

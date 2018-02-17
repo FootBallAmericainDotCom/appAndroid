@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.footballamericain.footballamericain.Custom.match.MatchViewModel" />
+    </data>
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -15,24 +23,32 @@
             app:expansion_layout="@id/expansionLayout"
             app:expansion_toggleOnClick="true">
 
-            <!-- HEADER -->
-
-            <TextView
+            <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="TEST" />
-            <!-- HEADER INDICATOR -->
-            <android.support.v7.widget.AppCompatImageView
-                android:layout_gravity="end"
-                android:id="@+id/headerIndicator"
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:adjustViewBounds="true"
-                android:tint="@color/colorAccent"
-                app:srcCompat="@drawable/ic_expansion_header_indicator_grey_24dp" />
+                android:orientation="horizontal">
 
+                <com.footballamericain.footballamericain.Custom.match.MatchView
+                    viewModel="@{viewModel}"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toStartOf="@id/headerIndicator"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:layout_height="100dp" />
 
+                <android.support.v7.widget.AppCompatImageView
+                    android:id="@+id/headerIndicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="end"
+                    android:adjustViewBounds="true"
+                    android:tint="@color/colorAccent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_expansion_header_indicator_grey_24dp" />
+            </android.support.constraint.ConstraintLayout>
         </com.github.florent37.expansionpanel.ExpansionHeader>
 
         <com.github.florent37.expansionpanel.ExpansionLayout
@@ -43,7 +59,7 @@
             <FrameLayout
                 android:id="@+id/container"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent" />
         </com.github.florent37.expansionpanel.ExpansionLayout>
     </LinearLayout>
 </layout>
