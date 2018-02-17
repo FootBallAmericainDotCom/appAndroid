@@ -8,7 +8,7 @@ import android.databinding.ObservableField
 class RunViewModel {
     val runNumber = ObservableField<String>()
     val yardGain = ObservableField<String>()
-    val averageLenth = ObservableField<String>()
+    val averageLength = ObservableField<String>()
 
     val longestRun = ObservableField<String>()
     val touchDown = ObservableField<String>()
