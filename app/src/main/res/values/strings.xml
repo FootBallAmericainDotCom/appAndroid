@@ -77,4 +77,8 @@
     <string name="forty_forty_nine">40-49</string>
     <string name="fifty_plus">+50</string>
     <string name="pct">Pct</string>
+    <string name="pat">Pat</string>
+    <string name="xpr">xpr</string>
+    <string name="xpt">xpt</string>
+    <string name="pts">pts</string>
 </resources>
