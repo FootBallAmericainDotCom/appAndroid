@@ -61,4 +61,13 @@
     <string name="stuff">Stuff</string>
     <string name="stuff_yards">Stuff Yds</string>
     <string name="sack">Sack</string>
+    <string name="punt">Punt</string>
+    <string name="punts">Punts</string>
+    <string name="tb">Tb</string>
+    <string name="tb_average">Tb%</string>
+    <string name="in_twenty">In20</string>
+    <string name="in_twenty_average">In20%</string>
+    <string name="tent_ret">Tent Ret</string>
+    <string name="yds_ret">Yds Ret</string>
+    <string name="net">Net</string>
 </resources>
