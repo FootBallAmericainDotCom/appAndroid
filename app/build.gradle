@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.apollographql.android'
 
 android {
     compileSdkVersion 27
@@ -47,4 +48,7 @@ dependencies {
     implementation 'com.afollestad:sectioned-recyclerview:0.5.0'
     implementation 'com.github.florent37:diagonallayout:1.0.7'
     implementation 'com.github.florent37:expansionpanel:1.0.6'
+
+    implementation "com.apollographql.apollo:apollo-runtime:$apollo_version"
+    implementation "com.apollographql.apollo:apollo-http-cache:$apollo_version"
 }
