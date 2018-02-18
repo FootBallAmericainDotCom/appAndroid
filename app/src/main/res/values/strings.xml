@@ -70,4 +70,11 @@
     <string name="tent_ret">Tent Ret</string>
     <string name="yds_ret">Yds Ret</string>
     <string name="net">Net</string>
+    <string name="field_goal">Field goal</string>
+    <string name="one_nineteen">1-19</string>
+    <string name="twenty_twenty_nine">20-29</string>
+    <string name="thirty_thirty_nine">30-39</string>
+    <string name="forty_forty_nine">40-49</string>
+    <string name="fifty_plus">+50</string>
+    <string name="pct">Pct</string>
 </resources>
