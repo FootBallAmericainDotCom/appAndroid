@@ -54,4 +54,11 @@
     <string name="fumble">Fumble</string>
     <string name="fum">Fum</string>
     <string name="fperd">F.Perd</string>
+    <string name="tackle">Tackle</string>
+    <string name="cumu">Cumu</string>
+    <string name="seul">Seul</string>
+    <string name="ast">Ast</string>
+    <string name="stuff">Stuff</string>
+    <string name="stuff_yards">Stuff Yds</string>
+    <string name="sack">Sack</string>
 </resources>
