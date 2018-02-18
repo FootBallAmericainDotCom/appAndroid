@@ -51,4 +51,6 @@ dependencies {
 
     implementation "com.apollographql.apollo:apollo-runtime:$apollo_version"
     implementation "com.apollographql.apollo:apollo-http-cache:$apollo_version"
+    implementation "com.apollographql.apollo:apollo-rx2-support:$apollo_version"
+
 }
