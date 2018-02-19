@@ -10,7 +10,7 @@ import com.footballamericain.footballamericain.dummy.MatchDummyContent
 /**
  * Created by Jc on 30/12/2017.
  */
-class MatchExpandableAdapter
+class WeekAdapter
     : RecyclerView.Adapter<WeekViewHolder>() {
 
     private var mLayoutInflater: LayoutInflater? = null
