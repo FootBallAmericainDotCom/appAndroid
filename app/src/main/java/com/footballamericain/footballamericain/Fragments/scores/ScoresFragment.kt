@@ -1,16 +1,15 @@
-package com.footballamericain.footballamericain.Fragments.Scores
+package com.footballamericain.footballamericain.Fragments.scores
 
 
+import android.arch.lifecycle.Observer
+import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.footballamericain.footballamericain.Adapter.MatchExpandableAdapter
-import com.footballamericain.footballamericain.Adapter.MatchRecyclerViewAdapter
-import com.footballamericain.footballamericain.Repository.MatchRepository
 import com.footballamericain.footballamericain.databinding.FragmentScoresBinding
-import com.footballamericain.footballamericain.dummy.MatchDummyContent
 
 
 /**
@@ -22,9 +21,11 @@ class ScoresFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
         val binding = FragmentScoresBinding.inflate(inflater, container, false)
 
-        binding.recyclerView.adapter = context?.let {
-            MatchExpandableAdapter(it, MatchRepository.getCalendar())
-        }
+        val viewModel = ViewModelProviders.of(this).get(ScoresViewModel::class.java)
+        val adapter = MatchExpandableAdapter()
+        binding.recyclerView.adapter = adapter
+
+        viewModel.weeksList.observe(this, Observer { it?.let { adapter.replaceList(it) } })
 
         return binding.root
     }

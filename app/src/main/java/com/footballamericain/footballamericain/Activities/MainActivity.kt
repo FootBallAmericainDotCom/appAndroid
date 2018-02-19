@@ -8,7 +8,7 @@ import com.footballamericain.footballamericain.Adapter.PagerFragmentAdapter
 import com.footballamericain.footballamericain.Fragments.AllTeams.AllTeamsFragment
 import com.footballamericain.footballamericain.Fragments.ArticlesFragment
 import com.footballamericain.footballamericain.Fragments.RankingFragment
-import com.footballamericain.footballamericain.Fragments.Scores.ScoresFragment
+import com.footballamericain.footballamericain.Fragments.scores.ScoresFragment
 import com.footballamericain.footballamericain.R
 import com.footballamericain.footballamericain.databinding.ActivityMainBinding
 import devlight.io.library.ntb.NavigationTabBar

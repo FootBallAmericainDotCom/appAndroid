@@ -11,6 +11,10 @@ import com.footballamericain.footballamericain.databinding.ActivityMatchBinding
 
 class MatchActivity : AppCompatActivity() {
 
+    companion object {
+        const val MATCH_ID = "MATCH_ID"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding: ActivityMatchBinding = DataBindingUtil.setContentView(this, R.layout.activity_match)
