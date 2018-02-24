@@ -31,7 +31,7 @@ class DepthChartFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
         val binding = FragmentRecyclerViewBinding.inflate(inflater, container, false)
         binding.recyclerView.adapter = context?.let {
-            DepthChartExpandableAdapter(it, TeamsRepository.getDepthChart())
+            DepthChartExpandableAdapter(TeamsRepository.getDepthChart())
         }
 
         return binding.root

@@ -6,7 +6,7 @@
 
         <variable
             name="model"
-            type="com.footballamericain.footballamericain.ViewHolder.Player.PlayerVHModel" />
+            type="com.footballamericain.footballamericain.ViewHolder.Player.PlayerViewModel" />
     </data>
 
     <LinearLayout
