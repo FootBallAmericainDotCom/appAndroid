@@ -43,11 +43,20 @@ dependencies {
 
     kapt "com.android.databinding:compiler:$android_plugin_version"
 
+    implementation 'com.orhanobut:logger:2.1.1'
+
     implementation 'devlight.io:navigationtabbar:1.2.5'
     implementation 'com.squareup.picasso:picasso:2.5.2'
     implementation 'com.afollestad:sectioned-recyclerview:0.5.0'
     implementation 'com.github.florent37:diagonallayout:1.0.7'
     implementation 'com.github.florent37:expansionpanel:1.0.6'
+
+    implementation 'com.google.code.gson:gson:2.8.2'
+
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.10'
+
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.8.1'
 
     implementation "com.apollographql.apollo:apollo-runtime:$apollo_version"
     implementation "com.apollographql.apollo:apollo-http-cache:$apollo_version"

@@ -1,10 +1,12 @@
 package com.footballamericain.footballamericain.App
 
-import android.content.Context
 import com.apollographql.apollo.ApolloClient
 import com.footballamericain.footballamericain.BuildConfig
+import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import java.util.concurrent.TimeUnit
+
 
 /**
  * Created by Jc on 18/02/2018.
@@ -13,16 +15,24 @@ class GqlClient {
 
     companion object {
         private const val SQL_CACHE_NAME = "footUsGQLCache"
-        private const val BASE_URL_DEBUG = ""
+        private const val BASE_URL_DEBUG = "http://164.132.102.4:3333/graphiql"
         private const val BASE_URL = ""
 
-        fun getClient(context: Context): ApolloClient {
+        fun getClient(): ApolloClient {
             val apolloClient: ApolloClient
+
+            val gson = GsonBuilder()
+                    .setLenient()
+                    .create()
+
+            val interceptor = HttpLoggingInterceptor()
+            interceptor.level = HttpLoggingInterceptor.Level.BODY
 
             val builder: OkHttpClient.Builder = OkHttpClient.Builder()
             builder.connectTimeout(45, TimeUnit.SECONDS)
             builder.writeTimeout(45, TimeUnit.SECONDS)
             builder.readTimeout(45, TimeUnit.SECONDS)
+            builder.addNetworkInterceptor(interceptor)
 
             val okHttpClient: OkHttpClient = builder.build()
 
