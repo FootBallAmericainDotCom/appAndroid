@@ -1,4 +1,4 @@
-package com.footballamericain.footballamericain.Fragments.scores
+package com.footballamericain.footballamericain.fragments.scores
 
 import android.app.Application
 import android.arch.lifecycle.AndroidViewModel

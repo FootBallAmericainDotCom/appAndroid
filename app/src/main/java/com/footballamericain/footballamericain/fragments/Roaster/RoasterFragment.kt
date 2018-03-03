@@ -1,4 +1,4 @@
-package com.footballamericain.footballamericain.Fragments.Roaster
+package com.footballamericain.footballamericain.fragments.Roaster
 
 
 import android.os.Bundle

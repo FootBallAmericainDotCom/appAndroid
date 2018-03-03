@@ -1,4 +1,4 @@
-package com.footballamericain.footballamericain.Fragments
+package com.footballamericain.footballamericain.fragments
 
 import android.os.Bundle
 import android.support.v4.app.Fragment

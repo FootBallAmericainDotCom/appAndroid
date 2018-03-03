@@ -1,4 +1,4 @@
-package com.footballamericain.footballamericain.Fragments.DepthChart
+package com.footballamericain.footballamericain.fragments.DepthChart
 
 
 import android.os.Bundle

@@ -4,7 +4,7 @@ import android.app.Application
 import android.arch.lifecycle.AndroidViewModel
 import android.databinding.ObservableField
 import android.support.v4.app.Fragment
-import com.footballamericain.footballamericain.Fragments.playerStats.PlayerStatsFragment
+import com.footballamericain.footballamericain.fragments.playerStats.PlayerStatsFragment
 import com.footballamericain.footballamericain.Repository.PlayerRepository
 import com.footballamericain.footballamericain.dummy.PlayerDummyContent
 

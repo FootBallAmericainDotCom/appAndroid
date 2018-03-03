@@ -1,11 +1,11 @@
-package com.footballamericain.footballamericain.Fragments.ConferenceRanking
+package com.footballamericain.footballamericain.fragments.ConferenceRanking
 
 import android.content.Context
 import android.databinding.ObservableField
 import com.footballamericain.footballamericain.Custom.Board.Row.RowView
 import com.footballamericain.footballamericain.Custom.Board.Row.RowViewModel
 import com.footballamericain.footballamericain.Custom.Board.Table.TableView
-import com.footballamericain.footballamericain.Fragments.ConferenceRanking.ConferenceRankingFragment.CONFERENCE.*
+import com.footballamericain.footballamericain.fragments.ConferenceRanking.ConferenceRankingFragment.CONFERENCE.*
 import com.footballamericain.footballamericain.R
 import com.footballamericain.footballamericain.Repository.RankingRepository
 

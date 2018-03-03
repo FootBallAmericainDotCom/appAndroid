@@ -1,4 +1,4 @@
-package com.footballamericain.footballamericain.Fragments
+package com.footballamericain.footballamericain.fragments
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.footballamericain.footballamericain.Adapter.PagerFragmentAdapter
-import com.footballamericain.footballamericain.Fragments.ConferenceRanking.ConferenceRankingFragment
+import com.footballamericain.footballamericain.fragments.ConferenceRanking.ConferenceRankingFragment
 import com.footballamericain.footballamericain.R
 import com.footballamericain.footballamericain.databinding.FragmentRankingBinding
 

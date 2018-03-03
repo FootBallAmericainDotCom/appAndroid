@@ -5,10 +5,10 @@ import android.os.Bundle
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import com.footballamericain.footballamericain.Adapter.PagerFragmentAdapter
-import com.footballamericain.footballamericain.Fragments.AllTeams.AllTeamsFragment
-import com.footballamericain.footballamericain.Fragments.ArticlesFragment
-import com.footballamericain.footballamericain.Fragments.RankingFragment
-import com.footballamericain.footballamericain.Fragments.scores.ScoresFragment
+import com.footballamericain.footballamericain.fragments.AllTeams.AllTeamsFragment
+import com.footballamericain.footballamericain.fragments.ArticlesFragment
+import com.footballamericain.footballamericain.fragments.RankingFragment
+import com.footballamericain.footballamericain.fragments.scores.ScoresFragment
 import com.footballamericain.footballamericain.R
 import com.footballamericain.footballamericain.databinding.ActivityMainBinding
 import devlight.io.library.ntb.NavigationTabBar

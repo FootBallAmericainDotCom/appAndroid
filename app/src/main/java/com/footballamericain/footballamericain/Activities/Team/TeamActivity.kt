@@ -5,9 +5,9 @@ import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.footballamericain.footballamericain.Adapter.PagerFragmentAdapter
-import com.footballamericain.footballamericain.Fragments.ArticlesFragment
-import com.footballamericain.footballamericain.Fragments.DepthChart.DepthChartFragment
-import com.footballamericain.footballamericain.Fragments.Roaster.RoasterFragment
+import com.footballamericain.footballamericain.fragments.ArticlesFragment
+import com.footballamericain.footballamericain.fragments.DepthChart.DepthChartFragment
+import com.footballamericain.footballamericain.fragments.Roaster.RoasterFragment
 import com.footballamericain.footballamericain.R
 import com.footballamericain.footballamericain.Repository.TeamsRepository
 import com.footballamericain.footballamericain.databinding.ActivityTeamBinding

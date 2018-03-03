@@ -1,4 +1,4 @@
-package com.footballamericain.footballamericain.Fragments.ConferenceRanking
+package com.footballamericain.footballamericain.fragments.ConferenceRanking
 
 
 import android.os.Bundle
