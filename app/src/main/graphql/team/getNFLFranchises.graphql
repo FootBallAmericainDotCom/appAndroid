@@ -1,8 +1,7 @@
 query getNFLFranchises($franchise: Int, $ligue: Int) {
   franchise(typeFranchise: $franchise, idLigue: $ligue) {
-    typeFranchise
-    idLigue
     franchise
-    franchise2
+    franchise2,
+    acronyme,
   }
 }

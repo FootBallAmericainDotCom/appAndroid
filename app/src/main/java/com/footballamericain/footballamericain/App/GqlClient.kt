@@ -2,7 +2,6 @@ package com.footballamericain.footballamericain.App
 
 import com.apollographql.apollo.ApolloClient
 import com.footballamericain.footballamericain.BuildConfig
-import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import java.util.concurrent.TimeUnit
@@ -15,15 +14,11 @@ class GqlClient {
 
     companion object {
         private const val SQL_CACHE_NAME = "footUsGQLCache"
-        private const val BASE_URL_DEBUG = "http://164.132.102.4:3333/graphiql"
+        private const val BASE_URL_DEBUG = "http://164.132.102.4:3333/graphql"
         private const val BASE_URL = ""
 
         fun getClient(): ApolloClient {
             val apolloClient: ApolloClient
-
-            val gson = GsonBuilder()
-                    .setLenient()
-                    .create()
 
             val interceptor = HttpLoggingInterceptor()
             interceptor.level = HttpLoggingInterceptor.Level.BODY
