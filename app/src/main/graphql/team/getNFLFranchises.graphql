@@ -1,0 +1,7 @@
+query getNFLFranchises($franchise: Int, $ligue: Int) {
+  franchise(typeFranchise: $franchise, idLigue: $ligue) {
+    franchise
+    franchise2,
+    acronyme,
+  }
+}
